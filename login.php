@@ -17,7 +17,7 @@
     });
     </script>
     <meta charset="utf-8">
-    <title></title>
+    <title>log in</title>
 </head>
 <body onresize="resizeInput()">
     <!--header-->
@@ -43,7 +43,7 @@
             </div>
             <div class="row">
                 <div id="tfheader">
-                    <form id="tfnewsearch" method="post" action="">
+                    <form id="tfnewsearch" method="post" action="search_page.php">
                         <input id="search1" type="text" class="tftextinput" name="q" size="21" maxlength="120"><input type="submit" value="search" class="tfbutton">
                     </form>
                     <div class="tfclear"></div>
@@ -53,47 +53,69 @@
     </div>
 
     <!--search result-->
-    <div id="layout">
-        <div class="row">
-            <div class="col1"></div>
-            <div class="col10">
-                <div id="resultstats">
-                    <div>Searched for <em>food</em>&nbsp;&nbsp;</div>
-                    <div> Searched The Event Collection: <span class="rectots">429,897 records</span></div>
-                    <div id="resfound"><strong>34,787</strong> results found</div>
-                    <hr />
-                    <div id="aggs" >
-                        <div class="aggHead">Refine by Genre</div>
-                        <form>
-                            <div>
-                                <span class="value-checkbox"><input type="checkbox" id="genre-0" name="dating"></span>
-                                <span class="value-content"><label for="genre-0">Dating</label></span>
-                            </div>
-                            <div>
-                                <span class="value-checkbox"><input type="checkbox" id="genre-1" name="sports"></span>
-                                <span class="value-content"><label for="genre-1">Outdoor Sports</label></span>
-                            </div>
-                            <div>
-                                <span class="value-checkbox"><input type="checkbox" id="genre-2" name="food"></span>
-                                <span class="value-content"><label for="genre-2">Food</label></span>
-                            </div>
-                            <div>
-                                <span class="value-checkbox"><input type="checkbox" id="genre-3" name="entertainment"></span>
-                                <span class="value-content"><label for="genre-3">Entertainment</label></span>
-                            </div>
-                        </form>
-                    </div>
-                    <div id="results">
-                        <div class="pagerange">Result 1 &ndash; 20 of 34,787</div>
-                        <div id="resultmenu">Sort by:
-                            <select name="selsort" onchange="">
-                                <option value=""></option>
-                                <option value="time">time</option>
-                            </select>
+    <br><br><br>
+    <style>
 
-                        </div>
-                        <br style="clear:both"/>
-                        <div id="content">
+        .input_f {
+             position: relative;
+             display: block;
+             margin : 0 auto;
+        }
+        .new_user {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+        label {
+            margin-right: auto;
+            margin-left: auto;
+            text-align: center;
+        }
+        .header_title {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+        h1 {
+            text-align: center;
+            font-size: 180%;
+            font-family: open sans;
+        }
+
+
+    </style>
+    <div class="container">
+        <div class="row">
+            <h1>Password or username wrong. Please re-enter your account infomation.</h1>
+            <div class="col4"></div>
+            <div class="col3" style="background-color:#F0F0F0; padding: 30px;">
+                <header class="popupHeader" style="text-align:center;">
+                    <span class="header_title">Login</span>
+                    
+                </header>
+                <div class="user_login">
+                    <form action="login.php" method="post" id="login_f">
+                            <label>Email / Username</label>
+                            <input class="input_f" type="text" name = "username" required/>
+                            <br>
+                            <label>Password</label>
+                            <input class="input_f" type="password" name = "password" required/>
+                            <br>
+                            <input type="submit" value="Login"  class="btn btn_theme input_f" style="width:98%;font-size:18px;border:1px solid white"/>
+                        </form>
+                    <br>
+                    <a href="signup_page.html" class = "new_user">New User? Click Here to Register</a>
+                </div>
+
+            </div>
+            <div class="col4"></div>
+
+
+
+
+        </div>
+    </div>
+    
 
                             <?php
 
@@ -159,59 +181,13 @@
             14 mytreat
             15 tag
             */
-            while($event = mysqli_fetch_array($result,MYSQLI_NUM)){
-                echo<<<end
-                <div class="entry">
+            
 
-                <div class="details">
-                <div class="title">
-                <form name="form$event[2]" action="event_page.php" method="post">
-                <input name="event_id" value="$event[2]" style="display:none">
-                <a href="javascript:document.form$event[2].submit()">$event[10]</a>
-                </form>
-
-                </div>
-                <div class="category">
-                <strong>Category:</strong>&nbsp;&nbsp;<span class="category-value">$event[13]</span>
-                </div>
-                <div class="member">
-                <strong>Organizer:</strong>&nbsp;&nbsp;<span class="member-value">$event[0] $event[1]</span>
-                </div>
-                <div class="time">
-                <strong>Time:</strong>&nbsp;&nbsp;<span class="time-value">$event[4]</span>
-                </div>
-                <div class="loacation">
-                <strong>Location:</strong>&nbsp;&nbsp;<span class="location-value">$event[5],&nbsp;$event[6],&nbsp;$event[7]&nbsp;$event[8]</span>
-                </div>
-                <div class="description">
-                <strong>Description:</strong>
-                <br />
-                <div>
-                <span class="description-value">$event[11]</span>
-                </div>
-                </div>
-                <br />
-                </div>
-                <br style="clear:both;"/>
-                </div>
-end;
-            }
+            
 
             ?>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col3"></div>
-        <div class="col6">
-            <div id="pagingControls"></div>
-        </div>
-        <div class="col3"></div>
-    </div>
-</div>
-</div>
-</div>
-</div>
 
+<br><br><br>
 <!-- footer -->
 <div class="row footer">
     <div class="row">
@@ -249,7 +225,7 @@ end;
     <section class="popupBody">
         <!-- Username & Password Login form -->
         <div class="user_login">
-            <form action="myprofile_page.php" method="post">
+            <form action="login.php" method="post">
                     <label>Email / Username</label>
                     <input type="text" name = "username" required/>
                     <br>

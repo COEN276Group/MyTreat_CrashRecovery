@@ -232,10 +232,10 @@ end;
 			<div class="user_login">
 				<form action="myprofile_page.php" method="post">
 					<label>Email / Username</label>
-					<input type="text" name = "username"/>
+					<input type="text" name = "username" required/>
 					<br>
 					<label>Password</label>
-					<input type="password" name = "password"/>
+					<input type="password" name = "password" required/>
 					<br>
 					<input type="submit" value="Login"  class="btn btn_theme" style="width:98%;font-size:18px;border:1px solid white"/>
 				</form>

@@ -198,16 +198,14 @@ end2;
         <section class="popupBody">
             <!-- Username & Password Login form -->
             <div class="user_login">
-                <form class="modal_form">
+                <form action="myprofile_page.php" method="post">
                     <label>Email / Username</label>
-                    <input type="text" />
+                    <input type="text" name = "username" required/>
                     <br>
                     <label>Password</label>
-                    <input type="password" />
+                    <input type="password" name = "password" required/>
                     <br>
-                    <div class="action_btns">
-                        <div class=""><a href="#" class="btn btn_theme">Login</a></div>
-                    </div>
+                    <input type="submit" value="Login"  class="btn btn_theme" style="width:98%;font-size:18px;border:1px solid white"/>
                 </form>
                 <br>
                 <a href="signup_page.php" class = "new_user">New User? Click Here to Register</a>
