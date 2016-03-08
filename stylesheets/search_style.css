@@ -1,0 +1,165 @@
+
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.event{
+	margin: 0px 10px;
+	padding:10px;
+	background-color: white;
+}
+
+a.sidebar:hover{
+	background-color: #f2efe8;
+
+}
+.sidebar{
+
+
+}
+img.homeevent{
+	width: 100%;
+
+}
+.event_title{
+	color: black;
+
+}
+.sec{
+	background-color: #c2d4d8;
+	padding: 10px 20px;
+}
+body{
+	background-color: white;
+	margin: 0px;
+}
+
+#layout {
+	width:100%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left:5px;
+	text-align:left;
+}
+
+/*search result*/
+#resultstats {
+    width:100%;
+	/*background-color:#ECE9D8;*/
+	font-size: 12px;
+    /*background:#9c9;*/
+    }
+
+	#resultstats a:link {
+		text-decoration: none;
+	}
+
+	#resultstats div {
+		padding-bottom: 10px;
+		padding-top: 5px;
+	}
+
+	#resfound {
+		background-color: #ece9d8;
+		padding-left:5px
+	}
+	#results {
+    float:right;
+    width:80%;
+    color: #000000;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 12px;
+	padding-top: 10px;
+    /*background:#9c9;*/
+    }
+
+		#results .numbering{
+		font-size: 12px;
+		font-weight:bold;
+		width:30px;
+		float:left;
+		text-align: right;
+		padding-top: 2px;
+	}
+	#results .details{
+		font-size: 12px;
+		width:92%;
+		float:right;
+		padding-bottom: 20px;
+	}
+
+	#results .title{
+		font-size: 14px;
+		padding-bottom:5px;
+	}
+
+	#results .member{
+		font-size: 12px;
+		padding-bottom:5px;
+	}
+
+	#results .time{
+		font-size: 12px;
+		padding-bottom:5px;
+	}
+
+	#results .location{
+		font-size: 12px;
+		padding-bottom:5px;
+	}
+	
+	#results .description{
+		font-size: 12px;
+		padding-bottom:5px;
+	}
+
+    #aggs {
+    float:left;
+    width:20%;
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+	font-size:12px;
+
+    }
+
+	.pagelogic {
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+	font-size:12px;
+	padding-bottom: 10px;
+    }
+
+	.pagerange {
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+	font-size:12px;
+	float:left;
+	 padding-bottom: 10px;
+    }
+
+	#resultmenu {
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+	font-size:12px;
+	float:right;
+	 padding-bottom: 10px;
+    }
+
+	#content{text-align:justify;}
+	#pagingControls{text-align:center;}
+	ul li{font-size: 40px;}
+	ul{list-style-type: none;padding-left: 0.5em}
+	li{display:inline;padding:0 0.5em}
+	a{display:inline;}
+    /*#pagingControls li{display:inline;padding:0 0.5em}*/
+
+#footer_title {
+  text-align: center;
+  font-size: 100%;
+}
+
+#support {
+  text-align: center;
+  font-size: 100%;
+}
+
+#login_button {
+	display: block;
+	text-decoration: none;
+}

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dating</title>
+	<link rel = 'stylesheet' type = 'text/css' href = "stylesheets/general_style.css">
+	<link rel = 'stylesheet' type = 'text/css' href = 'stylesheets/category_style.css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<meta charset="utf-8">
+	<script src="scripts/jQuery.js"></script>
+	<script src="scripts/modal.js"></script>
+	<script src="scripts/category.js"></script>
+	<script src="scripts/general.js"></script>
+</head>
+
+<body onresize="resizeInput()"> 
+	<div class="row" id = "heading" style = "padding:0px;margin:0px;">
+		<div class="col8" id="title_row">
+			<a href = "home_page.html">
+				<h1 style = "color:white;text-align:center;font-size:10vmin;margin:10px">MyTreat.com</h1>
+			</a>
+		</div>
+		<div class="col4">
+			<br>
+			<div class="row">
+				<div class="col6">
+					<form id="login" action="#modal">
+						<a id="modal_trigger" href="#modal"><span class="login_button">Log In</span></a>
+					</form>
+				</div>
+				<div class="col6">
+					<form  id="signup" action="#">
+						<a href="signup_page.html"><span class="login_button">Sign Up</span></a>
+					</form>
+				</div>
+			</div>
+			<div class="row">
+				<div id="tfheader">
+					<form id="tfnewsearch" method="get" action="search_result_page.html">
+						<input id="search1" type="text" class="tftextinput" name="q" size="21" maxlength="120"><input type="submit" value="search" class="tfbutton">
+					</form>
+					<div class="tfclear"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<br/>
+	<div class="row">
+		<div class = "col1"></div>
+		<div class = "col10 sec">
+			<div>
+				<div class = "row">
+					<h1 class = "cat_title">Romance is One Click Away</h1>
+				</div>
+				<div class = "row">
+					<img src="images/general/dating_theme.jpg" alt = "not found" style = "margin:10px 0px">
+				</div>
+			</div>
+			<div class = "row event_container">
+				<div class = "col1"></div>
+				<div class = "col3 eventphoto">
+					<a href=""><img src="images/content/dating5.jpg" alt="not found"></a>
+				</div>
+				<div class = "col1"></div>
+				<div class = "col6">
+					<div class = "row">
+						<div class = "row">
+							<div class = "col9"><a href="event_page.html"><h2>Double Date?</h2></a></div>
+							<div class = "col3 treat">
+								Split!
+							</div>
+						</div>
+						<hr>
+						<p>I am an accountant working in Deloit. My parents want me to date someone working in the tech industry. I am 27, divorced once, with my boy. I have my own house and car. Doing well financially. Two of my friends, a couple, will join us to have hotpot in Fremont.</p>
+						<p>
+							Location: 123 Fourth St, Fremont<br>
+							Time: 7:00pm Feb 12, 2016
+						</p>
+					</div>
+					<hr>
+					<div class = "row">
+						<div class = "col1">
+							<img src="images/profile_pics/profile30.png" alt="not found">
+						</div>
+						<div class = "col1"></div>
+						<div class = "col2">
+							<div class = "row">Beth Jun</div>
+							<div class = "row">****</div>
+						</div>
+						<div class = "col4"></div>
+						<div class = "col2"></div>
+						<div class = "col2">
+							<input class = "want_in_button" type = "button" value = "I Want In!">
+						</div>
+					</div>
+					<hr>
+					<p>Already In:</p>
+					<div class = "row">
+						<div class = "col1 participant"><a href=""><img src="images/profile_pics/profile31.png" alt="not found"></a></div>
+						<div class = "col1 participant"><a href=""><img src="images/profile_pics/profile32.png" alt="not found"></a></div>
+					</div>
+
+				</div>
+				<div class = "col1"></div>
+			</div>
+			<hr>
+			<div class = "row event_container">
+				<div class = "col1"></div>
+				<div class = "col3 eventphoto">
+					<a href=""><img src="images/content/dating1.png" alt="not found"></a>
+				</div>
+				<div class = "col1"></div>
+				<div class = "col6">
+					<div class = "row">
+						<div class = "row">
+							<div class = "col9"><a href="event_page.html"><h2>Monterey Bay Beach Date!</h2></a></div>
+							<div class = "col3 treat">
+								MyTreat!
+							</div>
+						</div>
+						<hr>
+						<p>There's something magical about the Monterey Bay, whether you're strolling the beach with your kids or soulmate or just watching the sun set over the water. Monterey County offers 99 miles of beautiful beaches across the pacific coastline, many of which are home to some of the best surf breaks along the West Coast. Moderate ocean temperatures and year-around sunshine make a day at the beach more enjoyable. Discover beaches perfect for any occasion, whether for a dog walk, a volleyball play or to simply relax and people watch.</p>
+						<p>
+							Location: Monetary Beach, Daly City<br>
+							Time: 7:30pm Feb 20, 2016
+						</p>
+					</div>
+					<hr>
+					<div class = "row">
+						<div class = "col1">
+							<img src="images/profile_pics/profile33.png" alt="not found">
+						</div>
+						<div class = "col1"></div>
+						<div class = "col2">
+							<div class = "row">Bobby Fisher</div>
+							<div class = "row">****</div>
+						</div>
+						<div class = "col4"></div>
+						<div class = "col2"></div>
+						<div class = "col2">
+							<input class = "want_in_button" type = "button" value = "I Want In!">
+						</div>
+					</div>
+					<hr>
+					<p>Already In:</p>
+					<div class = "row">
+						<div class = "col1 participant"><a href=""><img src="images/profile_pics/profile34.png" alt="not found"></a></div>
+					</div>
+
+				</div>
+				<div class = "col1"></div>
+			</div>
+			<hr>
+
+			<div class = "row event_container">
+				<div class = "col1"></div>
+				<div class = "col3 eventphoto">
+					<a href=""><img src="images/content/dating2.png" alt="not found"></a>
+				</div>
+				<div class = "col1"></div>
+				<div class = "col6">
+					<div class = "row">
+						<div class = "row">
+							<div class = "col9"><a href="event_page.html"><h2>Ice Cream Lovers?</h2></a></div>
+							<div class = "col3 treat">
+								Split!
+							</div>
+						</div>
+						<hr>
+						<p>One of My favorite bar/restaurant mash-ups combines a 1930s ice cream parlor (think handmade malts, ice cream, shakes, and upscale diner treats) with craft cocktails and modern flavors, making this the perfect place to woo your chosen one Jimmy Stewart-style. Boozy malts and milkshakes change with the season and they’ve got sexy booze desserts on the menu, like the This Drink Is My Date (w/ Allagash Curieux bourbon-barrel aged ale over butterscotch, milk chocolate, and banana puddin’ ice creams, with caramelized banana, whipped cream, and a cherry), or the Pink Violet, a sweet vanilla and violet-flavored soda that changes color from blue to pink as it’s being made.
+						</p>
+						<p>
+							Location: 123 Fourth St, Fremont<br>
+							Time: 7:00pm Feb 12, 2016
+						</p>
+					</div>
+					<hr>
+					<div class = "row">
+						<div class = "col1">
+							<img src="images/profile_pics/profile35.png" alt="not found">
+						</div>
+						<div class = "col1"></div>
+						<div class = "col2">
+							<div class = "row">Lizzy Gilope</div>
+							<div class = "row">****</div>
+						</div>
+						<div class = "col4"></div>
+						<div class = "col2"></div>
+						<div class = "col2">
+							<input class = "want_in_button" type = "button" value = "I Want In!">
+						</div>
+					</div>
+					<hr>
+					<p>Already In:</p>
+					<div class = "row">
+						<div class = "col1 participant"><a href=""><img src="images/profile_pics/profile36.png" alt="not found"></a></div>
+						<div class = "col1 participant"><a href=""><img src="images/profile_pics/profile37.png" alt="not found"></a></div>
+					</div>
+
+				</div>
+				<div class = "col1"></div>
+			</div>
+			<hr>
+
+			<div class = "row event_container">
+				<div class = "col1"></div>
+				<div class = "col3 eventphoto">
+					<a href=""><img src="images/content/dating3.png" alt="not found"></a>
+				</div>
+				<div class = "col1"></div>
+				<div class = "col6">
+					<div class = "row">
+						<div class = "row">
+							<div class = "col9"><a href="event_page.html"><h2>Monterey Aquarium Day!</h2></a></div>
+							<div class = "col3 treat">
+								MyTreat!
+							</div>
+						</div>
+						<hr>
+						<p>Out to sea and on the go—life's in constant motion in the open ocean. The Monterey Aquarium is a place where tuna and sharks speed past, sardines swarm in huge, glittering schools, and sea turtles swim lazily across the 90-foot window. Nearby, colorful puffins await their next meal, and brilliant jellies pulse through the water.</p>
+						<p>
+							Location: 123 Fourth St, Fremont<br>
+							Time: 7:00pm Feb 12, 2016
+						</p>
+					</div>
+					<hr>
+					<div class = "row">
+						<div class = "col1">
+							<img src="images/profile_pics/profile38.png" alt="not found">
+						</div>
+						<div class = "col1"></div>
+						<div class = "col2">
+							<div class = "row">Rachel Matts</div>
+							<div class = "row">****</div>
+						</div>
+						<div class = "col4"></div>
+						<div class = "col2"></div>
+						<div class = "col2">
+							<input class = "want_in_button" type = "button" value = "I Want In!">
+						</div>
+					</div>
+					<hr>
+					<p>Already In:</p>
+					<div class = "row">
+						<div class = "col1 participant"><a href=""><img src="images/profile_pics/profile39.png" alt="not found"></a></div>
+					</div>
+
+				</div>
+				<div class = "col1"></div>
+			</div>
+			<hr>
+			<div class = "row event_container">
+				<div class = "col1"></div>
+				<div class = "col3 eventphoto">
+					<a href=""><img src="images/content/dating4.png" alt="not found"></a>
+				</div>
+				<div class = "col1"></div>
+				<div class = "col6">
+					<div class = "row">
+						<div class = "row">
+							<div class = "col9"><a href="event_page.html"><h2>Dance to the top</h2></a></div>
+							<div class = "col3 treat">
+								Split!
+							</div>
+						</div>
+						<hr>
+						<p>Calling all jitterbugs, westies, greasers, molls, jive dancers, lindy-hoppers, hepcats, and those who are ready to stop being wall flowers and join in the fun! </p>
+						<p>
+							Location: 123 Fourth St, Fremont<br>
+							Time: 7:00pm Feb 12, 2016
+						</p>
+					</div>
+					<hr>
+					<div class = "row">
+						<div class = "col1">
+							<img src="images/profile_pics/profile40.png" alt="not found">
+						</div>
+						<div class = "col1"></div>
+						<div class = "col2">
+							<div class = "row">Gary Green</div>
+							<div class = "row">****</div>
+						</div>
+						<div class = "col4"></div>
+						<div class = "col2"></div>
+						<div class = "col2">
+							<input class = "want_in_button" type = "button" value = "I Want In!">
+						</div>
+					</div>
+					<hr>
+					<p>Already In:</p>
+					<div class = "row">
+
+					</div>
+
+				</div>
+				<div class = "col1"></div>
+			</div>
+			<hr>
+
+
+		</div>
+		<div class = "col1"></div>
+	</div>
+	<!-- footer -->
+	<br><br>
+	<div class="row footer">
+		<div class="row">
+			<div class="col1 footer">
+				<a class="iconlink" href="https://www.instagram.com" >
+					<img src="images/general/inst.png" width="30" alt="Image Not Found">
+				</a>
+			</div>
+			<div class="col1 footer">
+				<a class="iconlink" href="https://www.facebook.com">
+					<img src="images/general/facebook.png" width="30" alt="Image Not Found">
+				</a>
+			</div>
+			<div class="col1 footer">
+				<a class="iconlink" href="https://github.com/COEN276Group/MyTreat/tree/dev">
+					<img src="images/general/github.png" width="30" alt="Image Not Found">
+				</a>
+			</div>
+
+			<div class ="col6" id="connect">
+				<p id="footer_title">MyTreat.com</p>
+			</div>
+
+
+		</div>
+	</div>
+	<!--modal stuff-->
+
+	<div id="modal" class="popupContainer" style="display:none;">
+		<header class="popupHeader">
+			<span class="header_title">Login</span>
+			<span class="modal_close"><i class="fa fa-times"></i></span>
+		</header>
+
+		<section class="popupBody">
+			<!-- Username & Password Login form -->
+			<div class="user_login">
+				<form>
+					<label>Email / Username</label>
+					<input type="text" />
+					<br>
+
+					<label>Password</label>
+					<input type="password" />
+					<br>
+					<div class="action_btns">
+						<div class=""><a href="myprofile_page.html" class="btn btn_theme">Login</a></div>
+					</div>
+				</form>
+				<br>
+				<a href="signup_page.html" class = "new_user">New User? Click Here to Register</a>
+			</div>
+		</section>
+	</div>
+
+</body>
+</html>

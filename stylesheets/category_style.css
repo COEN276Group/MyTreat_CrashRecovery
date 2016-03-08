@@ -1,0 +1,35 @@
+*{
+	font-family: 'Open Sans', sans-serif;
+}
+body{
+	background-color: #ffffff;
+	margin: 0px;
+}
+.cat_title{
+	padding: 20px;
+	margin-bottom: 0px;
+	text-align: center;
+	background-color: #9C8AA5;
+	color:#fff;
+}
+.event_container{
+}
+.eventphoto{
+	margin: 8px 0px;
+	padding:10px;
+	background-color: white;
+}
+.participant{
+	margin: 2px;
+}
+.sec{
+	background-color: #ecf0f1;
+	padding: 10px 20px;
+}
+.treat{
+	color: orange;
+	font: italic bold;
+	font-size: 20px;
+	margin: 20px 0px;
+	text-align: center;
+}

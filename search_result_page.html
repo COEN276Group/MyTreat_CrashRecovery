@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Search_Result</title>
+	<link rel = "stylesheet" type = "text/css" href = "stylesheets/general_style.css">
+	<link rel = "stylesheet" type = "text/css" href = "stylesheets/search_style.css">
+	<link href= "https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+	<link rel="shortcut icon" href="images/general/favicon.ico" />
+	<script src="scripts/jQuery.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script src="scripts/search_script.js"></script>
+	<script src="scripts/modal.js"></script>
+    <script src="scripts/general.js"></script>
+	<script>
+	$(document).ready(function(){
+    	$("#modal_trigger").leanModal({top : 200, overlay : 0.6, closeButton: ".modal_close" });
+	});
+	</script>
+  <meta charset="utf-8">
+</head>
+<body onresize="resizeInput()">
+	<!--header-->
+	<div class="row" id = "heading" style = "padding:0px;margin:0px;">
+    	<div class="col8" id="title_row">
+        	<a href = "home_page.html">
+        		<h1 style = "color:white;text-align:center;font-size:10vmin;margin:10px">MyTreat.com</h1>
+          	</a>
+        </div>
+        <div class="col4">
+          	<br>
+          		<div class="row">
+            		<div class="col6">
+              			<form id="login" action="#modal">
+                			<a id="modal_trigger" href="#modal"><span class="login_button">Log In</span></a>
+              			</form>
+            		</div>
+            		<div class="col6">
+              			<form  id="signup" action="#">
+                			<a href="signup_page.html"><span class="login_button">Sign Up</span></a>
+              			</form>
+            		</div>
+          		</div>
+          		<div class="row">
+            		<div id="tfheader">
+              			<form id="tfnewsearch" method="get" action="http://www.google.com">
+                			<input id="search1" type="text" class="tftextinput" name="q" size="21" maxlength="120"><input type="submit" value="search" class="tfbutton">
+              			</form>
+              			<div class="tfclear"></div>
+            		</div>
+          		</div>
+		</div>
+   	</div>
+
+<!--search result-->
+<div id="layout">
+	<div class="row">
+		<div class="col1"></div>
+		<div class="col10">
+			<div id="resultstats">
+			<div>Searched for <em>food</em>&nbsp;&nbsp;</div>
+			<div> Searched The Event Collection: <span class="rectots">429,897 records</span></div>
+			<div id="resfound"><strong>34,787</strong> results found</div>
+			<hr />
+				<div id="aggs" >
+    			<div class="aggHead">Refine by Genre</div>
+				<form>
+                	<div>
+                    	<span class="value-checkbox"><input type="checkbox" id="genre-0"></span>
+                        <span class="value-content"><label for="genre-0">Dating</label></span>
+                    </div>
+                    <div>
+                    	<span class="value-checkbox"><input type="checkbox" id="genre-1"></span>
+                        <span class="value-content"><label for="genre-1">Sports</label></span>
+                    </div>
+                    <div>
+                    	<span class="value-checkbox"><input type="checkbox" id="genre-2"></span>
+                        <span class="value-content"><label for="genre-2">Food</label></span>
+                    </div>
+                    <div>
+                    	<span class="value-checkbox"><input type="checkbox" id="genre-3"></span>
+                        <span class="value-content"><label for="genre-3">Music</label></span>
+                    </div>
+                    <div>
+                    	<span class="value-checkbox"><input type="checkbox" id="genre-4"></span>
+                        <span class="value-content"><label for="genre-4">Academic</label></span>
+                    </div>
+                    <div>
+                    	<span class="value-checkbox"><input type="checkbox" id="genre-5"></span>
+                        <span class="value-content"><label for="genre-5">Names</label></span>
+                    </div>
+				</form>
+				</div>
+				<div id="results">
+					<div class="pagerange">Result 1 &ndash; 20 of 34,787</div>
+                    <div id="resultmenu">Sort by: 
+                    	<select name="selsort" onchange="sortres(this.options[this.selectedIndex].value);">
+                        	<option value="_score">relevance</option>
+                            <option value="time" >time</option>				    
+                        </select>
+
+</div>
+                    <br style="clear:both"/>
+                    <div id="content">
+                    	<div class="entry">
+                        	<div class="numbering">1</div>
+                            <div class="details">
+                            	<div class="title">
+                                   	<a href="event_page.html">food1</a>
+                                </div>
+                                <div class="member">
+                                	<strong>Member:</strong>&nbsp;&nbsp;<span class="member-value">Dan Shen,Jean-David Ruvini,Badrul Sarwar</span>
+                                </div>
+                                <div class="time">
+                                    <strong>Time:</strong>&nbsp;&nbsp;<span class="time-value">March 29th, 2016</span>
+        						</div>
+                                <div class="loacation">
+                                    <strong>Location:</strong>&nbsp;&nbsp;<span class="location-value">SF Mikkeller Bar  Union Square 34 Mason St San</span> Francisco, CA 94102 
+                                </div>
+                                <div class="description">
+                                    <strong>Description:</strong>
+                                    <br />
+                                    <div>
+                                    <span class="description-value">"Brewery touring and beverage sampling* Beer Socials* Private tastings* Beer festivals* And much more"</span>
+                                    </div>
+								</div>
+								<br />
+                            </div>
+                            <br style="clear:both"/>
+                        </div>
+                    	<div class="entry">
+                        	<div class="numbering">2</div>
+                            <div class="details">
+                            	<div class="title">
+                                   	<a href="event_page.html">food2</a>
+                                </div>
+                                <div class="member">
+                                	<strong>Member:</strong>&nbsp;&nbsp;<span class="member-value">Dan Shen,Jean-David Ruvini,Badrul Sarwar</span>
+                                </div>
+                                <div class="time">
+                                    <strong>Time:</strong>&nbsp;&nbsp;<span class="time-value">March 29th, 2016</span>
+        						</div>
+                                <div class="loacation">
+                                    <strong>Location:</strong>&nbsp;&nbsp;<span class="location-value">SF Mikkeller Bar  Union Square 34 Mason St San</span> Francisco, CA 94102 
+                                </div>
+                                <div class="description">
+                                    <strong>Description:</strong>
+                                    <br />
+                                    <div>
+                                    <span class="description-value">An evening of Scotch and Whiskey drinking usubothy goes hand in hand with good conversation in relaxed company. I look forward to a comfortable and vibrant group.</span>
+                                    </div>
+								</div>
+								<br />
+                            </div>
+                            <br style="clear:both;" />
+                        </div>
+                    	<div class="entry">
+                        	<div class="numbering">3</div>
+                            <div class="details">
+                            	<div class="title">
+                                   	<a href="event_page.html">food3</a>
+                                </div>
+                                <div class="member">
+                                	<strong>Member:</strong>&nbsp;&nbsp;<span class="member-value">Dan Shen,Jean-David Ruvini,Badrul Sarwar</span>
+                                </div>
+                                <div class="time">
+                                    <strong>Time:</strong>&nbsp;&nbsp;<span class="time-value">March 29th, 2016</span>
+        						</div>
+                                <div class="loacation">
+                                    <strong>Location:</strong>&nbsp;&nbsp;<span class="location-value">SF Mikkeller Bar  Union Square 34 Mason St San</span> Francisco, CA 94102 
+                                </div>
+                                <div class="description">
+                                    <strong>Description:</strong>
+                                    <br />
+                                    <div>
+                                    <span class="description-value">Let's take advantage of Koreatown and try some new Barbecue joints!  We try other types of Korean restaurants, but KBBQ is our main focus</span>
+                                    </div>
+								</div>
+								<br />
+                            </div>
+                            <br style="clear:both;"/>
+                        </div>
+                    	<div class="entry">
+                        	<div class="numbering">4</div>
+                            <div class="details">
+                            	<div class="title">
+                                   	<a href="event_page.html">food4</a>
+                                </div>
+                                <div class="member">
+                                	<strong>Member:</strong>&nbsp;&nbsp;<span class="member-value">Dan Shen,Jean-David Ruvini,Badrul Sarwar</span>
+                                </div>
+                                <div class="time">
+                                    <strong>Time:</strong>&nbsp;&nbsp;<span class="time-value">March 29th, 2016</span>
+        						</div>
+                                <div class="loacation">
+                                    <strong>Location:</strong>&nbsp;&nbsp;<span class="location-value">SF Mikkeller Bar  Union Square 34 Mason St San</span> Francisco, CA 94102 
+                                </div>
+                                <div class="description">
+                                    <strong>Description:</strong>
+                                    <br />
+                                    <div>
+                                    <span class="description-value">Sichuan restaurants are winning over New York City. Let's explore them together, family-style. If you can take the heat, join us!</span>
+                                    </div>
+								</div>
+								<br />
+                            </div>
+                            <br style="clear:both;"/>
+                        </div>
+                    	<div class="entry">
+                        	<div class="numbering">5</div>
+                            <div class="details">
+                            	<div class="title">
+                                   	<a href="event_page.html">food5</a>
+                                </div>
+                                <div class="member">
+                                	<strong>Member:</strong>&nbsp;&nbsp;<span class="member-value">Dan Shen,Jean-David Ruvini,Badrul Sarwar</span>
+                                </div>
+                                <div class="time">
+                                    <strong>Time:</strong>&nbsp;&nbsp;<span class="time-value">March 29th, 2016</span>
+        						</div>
+                                <div class="loacation">
+                                    <strong>Location:</strong>&nbsp;&nbsp;<span class="location-value">SF Mikkeller Bar  Union Square 34 Mason St San</span> Francisco, CA 94102 
+                                </div>
+                                <div class="description">
+                                    <strong>Description:</strong>
+                                    <br />
+                                    <div>
+                                    <span class="description-value">We are a group that loves Italian...food, fun and SPICY MEATBbothS! </span>
+                                    </div>
+								</div>
+								<br />
+                            </div>
+                            <br style="clear:both;"/>
+                        </div>
+                    	<div class="entry">
+                        	<div class="numbering">6</div>
+                            <div class="details">
+                            	<div class="title">
+                                   	<a href="event_page.html">food6</a>
+                                </div>
+                                <div class="member">
+                                	<strong>Member:</strong>&nbsp;&nbsp;<span class="member-value">Dan Shen,Jean-David Ruvini,Badrul Sarwar</span>
+                                </div>
+                                <div class="time">
+                                    <strong>Time:</strong>&nbsp;&nbsp;<span class="time-value">March 29th, 2016</span>
+        						</div>
+                                <div class="loacation">
+                                    <strong>Location:</strong>&nbsp;&nbsp;<span class="location-value">SF Mikkeller Bar  Union Square 34 Mason St San</span> Francisco, CA 94102 
+                                </div>
+                                <div class="description">
+                                    <strong>Description:</strong>
+                                    <br />
+                                    <div>
+                                    <span class="description-value">Tea is the second most popular beverage in the world, behind water, and yet, there’s a quite a bit of mystique behind this amber liquid. Where does it come from? What’s roasted tea and how does roasting change its flavors?</span>
+                                    </div>
+								</div>
+								<br />
+                            </div>
+                            <br style="clear:both;"/>
+                        </div>
+                    	<div class="entry">
+                        	<div class="numbering">7</div>
+                            <div class="details">
+                            	<div class="title">
+                                   	<a href="event_page.html">food7</a>
+                                </div>
+                                <div class="member">
+                                	<strong>Member:</strong>&nbsp;&nbsp;<span class="member-value">Dan Shen,Jean-David Ruvini,Badrul Sarwar</span>
+                                </div>
+                                <div class="time">
+                                    <strong>Time:</strong>&nbsp;&nbsp;<span class="time-value">March 29th, 2016</span>
+        						</div>
+                                <div class="loacation">
+                                    <strong>Location:</strong>&nbsp;&nbsp;<span class="location-value">SF Mikkeller Bar  Union Square 34 Mason St San</span> Francisco, CA 94102 
+                                </div>
+                                <div class="description">
+                                    <strong>Description:</strong>
+                                    <br />
+                                    <div>
+                                    <span class="description-value"> Try out the best vegan and vegetarian eats, cooked up by some of the Bay Area’s hottest chefs.</span>
+                                    </div>
+								</div>
+								<br />
+                            </div>
+                            <br style="clear:both;"/>
+                        </div>
+                    	<div class="entry">
+                        	<div class="numbering">8</div>
+                            <div class="details">
+                            	<div class="title">
+                                   	<a href="event_page.html">food8</a>
+                                </div>
+                                <div class="member">
+                                	<strong>Member:</strong>&nbsp;&nbsp;<span class="member-value">Dan Shen,Jean-David Ruvini,Badrul Sarwar</span>
+                                </div>
+                                <div class="time">
+                                    <strong>Time:</strong>&nbsp;&nbsp;<span class="time-value">March 29th, 2016</span>
+        						</div>
+                                <div class="loacation">
+                                    <strong>Location:</strong>&nbsp;&nbsp;<span class="location-value">SF Mikkeller Bar  Union Square 34 Mason St San</span> Francisco, CA 94102 
+                                </div>
+                                <div class="description">
+                                    <strong>Description:</strong>
+                                    <br />
+                                    <div>
+                                    <span class="description-value">Let us live a long time by enjoying health and friendship of others. What better way than meeting for coffee and cupcakes. </span>
+                                    </div>
+								</div>
+								<br />
+                            </div>
+                            <br style="clear:both;"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                	<div class="col3"></div>
+                    <div class="col6">
+                    	<div id="pagingControls"></div>
+                    </div>
+                    <div class="col3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- footer -->
+    <div class="row footer">
+        <div class="row">
+            <div class="col1 footer">
+                <a class="iconlink" href="https://www.instagram.com" >
+                  <img src="images/general/inst.png" width="30" alt="Image Not Found">
+                </a>
+            </div>
+            <div class="col1 footer">
+                <a class="iconlink" href="https://www.facebook.com">
+                  <img src="images/general/facebook.png" width="30" alt="Image Not Found">
+                </a>
+            </div>
+            <div class="col1 footer">
+                <a class="iconlink" href="https://github.com/COEN276Group/MyTreat/tree/dev">
+                  <img src="images/general/github.png" width="30" alt="Image Not Found">
+                </a>
+            </div>
+
+            <div class ="col6" id="connect">
+                <p id="footer_title">MyTreat.com</p>
+            </div>
+        </div>
+    </div>
+
+
+      <!--modal stuff-->
+
+  <div id="modal" class="popupContainer" style="display:none;">
+      <header class="popupHeader">
+        <span class="header_title">Login</span>
+        <span class="modal_close"><i class="fa fa-times"></i></span>
+      </header>
+
+      <section class="popupBody">
+        <!-- Username & Password Login form -->
+        <div class="user_login">
+          <form>
+            <label>Email / Username</label>
+            <input type="text" />
+            <br>
+
+            <label>Password</label>
+            <input type="password" />
+            <br>
+            <div class="action_btns">
+              <div class=""><a id="login_button" href="#" class="btn btn_theme">Login</a></div>
+            </div>
+          </form>
+          <br>
+          <a href="signup_page.html" class = "new_user">New User? Click Here to Register</a>
+        </div>
+      </section>
+  </div>
+
+
+
+<script type="text/javascript">
+var pager = new Imtech.Pager();
+$(document).ready(function() {
+    pager.paragraphsPerPage = 3; // set amount elements per page
+    pager.pagingContainer = $('#content'); // set of main container
+    pager.paragraphs = $('div.entry', pager.pagingContainer); // set qof required containers
+    pager.showPage(1);
+});
+
+</script>
+
+</body>
+</html>

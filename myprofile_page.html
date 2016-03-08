@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+  <head>
+        <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="stylesheets/profile_style.css">
+        <link rel="stylesheet" href="stylesheets/general_style.css">
+        <link rel="shortcut icon" href="images/general/favicon.ico" />
+        <script src="scripts/jQuery.js"></script>
+        <script src="scripts/modal.js"></script>
+        <script src="scripts/profile_script.js"></script>
+        <script src="scripts/pictureuploader.js"></script>
+        <script src="scripts/general.js"></script>
+
+        <script>
+        $(document).ready(function(){
+          $("#modal_trigger").leanModal({top : 200, overlay : 0.6, closeButton: ".modal_close" });
+        });
+        </script>
+
+        <title>my profile page</title>
+    </head>
+  <body onresize="resizeInput()">
+
+    <div class="row" id = "heading" style = "padding:0px;margin:0px;">
+      <div class="col8" id="title_row">
+          <a href = "home_page.html">
+            <h1 style = "color:white;text-align:center;font-size:10vmin;margin:10px">MyTreat.com</h1>
+          </a>
+        </div>
+        <div class="col4">
+          <br>
+          <div class="row">
+            <div class="col6">
+              <form id="login" action="#modal">
+                <a id="modal_trigger" href="#modal"><span class="login_button">Log In</span></a>
+              </form>
+            </div>
+            <div class="col6">
+              <form  id="signup" action="#">
+                <a href="signup_page.html"><span class="login_button">Sign Up</span></a>
+              </form>
+            </div>
+          </div>
+          <div class="row">
+            <div id="tfheader">
+              <form id="tfnewsearch" method="get" action="search_result_page.html">
+                <input id="search1" type="text" class="tftextinput" name="q" size="21" maxlength="120"><input type="submit" value="search" class="tfbutton">
+              </form>
+              <div class="tfclear"></div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <br>
+
+      <div class="container">
+      <div class="row" id="subtitle">
+                <h2>My Profile</h2>
+      </div>
+      <br>
+      <div class="row" id="subrow1">
+      <h3>Steven Parsons</h3>
+      </div>
+      <div class="row sec">
+      <div class="col2">
+       <div id="changepic" style="display: none">
+          <input type="file" onchange="previewFile()"><br>
+        </div>
+        <img id="pic1" src="images/profile_pics/profile3.png" alt="Image preview...">
+
+      </div>
+      <div class="col1"></div>
+      <div class="col9" id="col1">
+      <p>About Myself: Water sports lover, life lies in motion!</p>
+      <p>Hobbies: <span class="edit_text" contenteditable="false">Surfing, Fintess, Swimming, Cooking</span></p>
+      <p>Occupation Area: <span class="edit_text" contenteditable="false">Fitness, Sports</span></p>
+      <p>Places of Interests: <span class="edit_text" contenteditable="false">Ocean beach, Gym, Swimming Pool</span></p>
+
+
+      <div class="row">
+            <div class="col10"></div>
+            <div class="col1 edit">
+              <input class="edit_button" type="button" value="Edit" />
+            </div>
+            <div class="col1 save">
+              <input class="save_button" type="button" value="Save" />
+            </div>
+
+          </div>
+
+      <span>(4.0/5.0)</span>
+      <div class="rating">
+      <span></span><span>&#9734;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>: gnitaR
+      </div>
+       <br>
+      <p><a href="mailto:webmaster@gmail.com">Reach me @stevenparsons97</a></p>
+      </div>
+      </div>
+      <br>
+      <div class = "row" id="subrow2">
+      <h4>Manage My Events</h4>
+      </div>
+        <div class="row sec">
+        <div class = "col1"></div>
+        <div class="col2" id="s1"><a href="my_events_management.html"><img  src="images/content/outdoor3.png" alt="loading..."></a><span class = "event_title"><a href="my_events_management.html">#Running Group</a></span></div>
+        <div class="col2" id="s2"><a href="my_events_management.html"><img  src="images/content/outdoor5.png" alt="loading..."></a><span class = "event_title"><a href="my_events_management.html">#Adventurous Diving </a></span></div>
+        <div class="col2" id="s3"><a href="my_events_management.html"><img  src="images/content/food2.png" alt="loading..."></a><span class = "event_title"><a href="my_events_management.html">#Wine Tasting</a></span></div>
+        <div class="col2" id="s4"><a href="my_events_management.html"><img  src="images/content/food3.png" alt="loading..."></a><span class = "event_title"><a href="my_events_management.html">#Hot Pot Party</a></span></div>
+        <div class = "col1"></div>
+        <div class = "col1">
+                <form action="my_events_management.html">
+                  <input type = "submit" value = "More . . .">
+                </form>
+        </div>
+        </div>
+
+  </div>
+
+      <br>
+      <div class="row footer">
+        <div class="row">
+            <div class="col1 footer">
+                <a class="iconlink" href="https://www.instagram.com" >
+                  <img src="images/general/inst.png" width="30" alt="Image Not Found">
+                </a>
+            </div>
+            <div class="col1 footer">
+                <a class="iconlink" href="https://www.facebook.com">
+                  <img src="images/general/facebook.png" width="30" alt="Image Not Found">
+                </a>
+            </div>
+            <div class="col1 footer">
+                <a class="iconlink" href="https://github.com">
+                  <img src="images/general/github.png" width="30" alt="Image Not Found">
+                </a>
+            </div>
+
+            <div class ="col6" id="connect">
+                <p id="footer_title">MyTreat.com</p>
+            </div>
+
+
+        </div>
+    </div>
+<!--modal stuff-->
+
+    <div id="modal" class="popupContainer" style="display:none;">
+        <header class="popupHeader">
+          <span class="header_title">Login</span>
+          <span class="modal_close"><i class="fa fa-times"></i></span>
+        </header>
+
+        <section class="popupBody">
+          <!-- Username & Password Login form -->
+          <div class="user_login">
+            <form class="modal_form">
+              <label>Email / Username</label>
+              <input type="text" />
+              <br>
+              <label>Password</label>
+              <input type="password" />
+              <br>
+              <div class="action_btns">
+                <div class=""><a href="#" class="btn btn_theme">Login</a></div>
+              </div>
+            </form>
+            <br>
+            <a href="signup_page.html" class = "new_user">New User? Click Here to Register</a>
+          </div>
+        </section>
+    </div>
+
+  </body>
+</html>
