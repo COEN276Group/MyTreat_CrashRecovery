@@ -11,6 +11,8 @@
     <script src="scripts/flip.js"></script>
 	<script src="scripts/modal.js"></script>
 	<script src="scripts/home.js"></script>
+	<script type="text/javascript">
+	</script>
 </head>
 <body onresize="resizeInput()">
 <div class="row" id = "heading" style = "padding:0px;margin:0px;">
@@ -35,8 +37,9 @@
           </div>
           <div class="row">
             <div id="tfheader">
-              <form id="tfnewsearch" method="get" action="search_result_page.html">
-                <input type="text" id="search1" class="tftextinput" placeholder="Search Events" name="q" size="21" maxlength="120"><input type="submit" value="search" class="tfbutton">
+              <form id="tfnewsearch" method="post" action="search_page.php">
+                <input type="text" id="search1" class="tftextinput" placeholder="Search Events" name="keyword" size="21" maxlength="120">
+				<input type="submit" value="search" class="tfbutton">
               </form>
               <div class="tfclear"></div>
             </div>

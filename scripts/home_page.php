@@ -59,7 +59,11 @@
 		<div class = "col1"></div>
 		<div class = "col10 sec">
 <?php
+	$current_user = $_GET['current_user'];
+	echo "<h1>hahahaha</h1>";
+	echo isset($current_user)?"The Current User is: $current_user":"Nothing is set";
 	echo<<<end
+
 
 
 			<!--Section Code Starts Here-->
@@ -236,7 +240,7 @@
 										</div>
 										<hr>
 										<p class = "event_description">
-											Calling all jitterbugs, westies, greasers, molls, jive dancers, lindy-hoppers, hepcats, and those who are ready to stop being wall flowers and join in the fun! 
+											Calling all jitterbugs, westies, greasers, molls, jive dancers, lindy-hoppers, hepcats, and those who are ready to stop being wall flowers and join in the fun!
 										</p>
 										<div class = "row">
 											<div class = "col1"></div>
@@ -261,6 +265,7 @@
 			</div>
 			<hr>
 end;
+
 ?>
 </div>
 <div class="col1"></div>

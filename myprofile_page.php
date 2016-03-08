@@ -1,65 +1,5 @@
 <!DOCTYPE html>
 <html>
-<head>
-      <!--[if lt IE 9]>
-      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-      <![endif]-->
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet" type="text/css">
-      <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-      <link rel="stylesheet" href="stylesheets/profile_style.css">
-      <link rel="stylesheet" href="stylesheets/general_style.css">
-      <link rel="shortcut icon" href="images/general/favicon.ico" />
-      <script src="scripts/jQuery.js"></script>
-      <script src="scripts/modal.js"></script>
-      <script src="scripts/profile_script.js"></script>
-      <script src="scripts/pictureuploader.js"></script>
-      <script src="scripts/general.js"></script>
-
-      <script>
-      $(document).ready(function(){
-        $("#modal_trigger").leanModal({top : 200, overlay : 0.6, closeButton: ".modal_close" });
-      });
-      </script>
-
-      <title>my profile page</title>
-  </head>
-<body onresize="resizeInput()">
-
-  <div class="row" id = "heading" style = "padding:0px;margin:0px;">
-    <div class="col8" id="title_row">
-        <a href = "home_page.html">
-          <h1 style = "color:white;text-align:center;font-size:10vmin;margin:10px">MyTreat.com</h1>
-        </a>
-      </div>
-      <div class="col4">
-        <br>
-        <div class="row">
-          <div class="col6">
-            <form id="login" action="#modal">
-              <a id="modal_trigger" href="#modal"><span class="login_button">Log In</span></a>
-            </form>
-          </div>
-          <div class="col6">
-            <form  id="signup" action="#">
-              <a href="signup_page.html"><span class="login_button">Sign Up</span></a>
-            </form>
-          </div>
-        </div>
-        <div class="row">
-          <div id="tfheader">
-            <form id="tfnewsearch" method="get" action="search_result_page.html">
-              <input id="search1" type="text" class="tftextinput" name="q" size="21" maxlength="120"><input type="submit" value="search" class="tfbutton">
-            </form>
-            <div class="tfclear"></div>
-          </div>
-        </div>
-    </div>
-  </div>
-
-  <br>
-    <body>
 
 <?php
     $user_id = $_POST['user_id'];
@@ -94,6 +34,74 @@
     $pic_url = $row[11];
 
     echo <<<end1
+    <head>
+          <!--[if lt IE 9]>
+          <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+          <![endif]-->
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet" type="text/css">
+          <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+          <link rel="stylesheet" href="stylesheets/profile_style.css">
+          <link rel="stylesheet" href="stylesheets/general_style.css">
+          <link rel="shortcut icon" href="images/general/favicon.ico" />
+          <script src="scripts/jQuery.js"></script>
+          <script src="scripts/modal.js"></script>
+          <script src="scripts/profile_script.js"></script>
+          <script src="scripts/pictureuploader.js"></script>
+          <script src="scripts/general.js"></script>
+
+          <script>
+          $(document).ready(function(){
+            $("#modal_trigger").leanModal({top : 200, overlay : 0.6, closeButton: ".modal_close" });
+          });
+          </script>
+
+          <title>my profile page</title>
+      </head>
+    <body onresize="resizeInput()">
+
+      <div class="row" id = "heading" style = "padding:0px;margin:0px;">
+        <div class="col8" id="title_row">
+            <a href = "home_page.php?current_user=$user_id">
+              <h1 style = "color:white;text-align:center;font-size:10vmin;margin:10px">MyTreat.com</h1>
+            </a>
+          </div>
+          <div class="col4">
+            <br>
+            <div class="row">
+              <div class="col6">
+                <form id="login" action="#modal">
+                  <a id="modal_trigger" href="#modal"><span class="login_button">Log In</span></a>
+                </form>
+              </div>
+              <div class="col6">
+                <form  id="signup" action="#">
+                  <a href="signup_page.html"><span class="login_button">Sign Up</span></a>
+                </form>
+              </div>
+            </div>
+            <div class="row">
+              <div id="tfheader">
+                <form id="tfnewsearch" method="get" action="search_result_page.html">
+                  <input id="search1" type="text" class="tftextinput" name="q" size="21" maxlength="120"><input type="submit" value="search" class="tfbutton">
+                </form>
+                <div class="tfclear"></div>
+              </div>
+            </div>
+        </div>
+      </div>
+
+      <br>
+        <body>
+
+
+
+
+
+
+
+
     <div class="container">
         <div class="row" id="subtitle">
             <h2>Profile</h2>

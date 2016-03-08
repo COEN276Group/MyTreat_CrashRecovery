@@ -14,7 +14,7 @@
 	<script>
 	$(document).ready(function(){
     	$("#modal_trigger").leanModal({top : 200, overlay : 0.6, closeButton: ".modal_close" });
-	});     
+	});
 	</script>
 	<script type="text/javascript">
 	/*function getFilterOptions(){
@@ -29,21 +29,21 @@
 <<<<<<< HEAD
 =======
 	echo 'Connected Successfully<br>';
-	//choose database	
+	//choose database
 	$db = mysql_select_db("mysql",$link);
 	if(!$db){
 		die("Database not found".mysql_error());
-	}	
+	}
 	$sql = "select LastName, FirstName from Persons;";
 	$result = mysql_query($sql,$link);
-	
+
 	while($event1 = mysql_fetch_array($result)){
 		echo<<<end
 
 		<h1>Shutd fuck up</h1>
 
 
-			
+
 						<div class = "category">
 							<div class = "card">
 								<div class = "front">
@@ -88,7 +88,7 @@
 								</div>
 							</div>
 						</div>
-			
+
 end;
 >>>>>>> origin/dev
 
@@ -107,7 +107,7 @@ end;
         });
       });
 	}
-		
+
 	var $checkboxes = $("input:checkbox");
 
 	$checkboxes.on("change", function(){
@@ -115,9 +115,9 @@ end;
   	update(opts);
 	});
 
-	
+
 	update();*/
-		
+
       /*$(function() {
         $("#tfnewsearch").bind('submit',function() {
           var value = $('#search1').val();
@@ -127,15 +127,15 @@ end;
            return false;
         });
       });*/
-		      $(function() {
-        $("#tfnewsearch").bind('submit',function() {
-          var value = $('#search1').val();
-           $.post('db_query.php',{value:value}, function(data){
-             $("#content").html(data);
-           });
-           return false;
-        });
-      });
+	  $(function() {
+		  $("#tfnewsearch").bind('submit',function() {
+			  var value = $('#search1').val();
+			  $.post('db_query.php',{value:value}, function(data){
+				  $("#content").html(data);
+			  });
+			  return false;
+		  });
+	  });
     </script>
   <meta charset="utf-8">
 </head>
@@ -205,17 +205,17 @@ end;
 				</div>
 				<div id="results">
 					<div class="pagerange">Result 1 &ndash; 20 of 34,787</div>
-                    <div id="resultmenu">Sort by: 
+                    <div id="resultmenu">Sort by:
                     	<select name="selsort" onchange="">
                         	<option value=""></option>
-                            <option value="time">time</option>				    
+                            <option value="time">time</option>
                         </select>
 
 </div>
                     <br style="clear:both"/>
                     <div id="content">
      	<!--db_query.php-->
-                    	
+
                     </div>
                 </div>
                 <div class="row">
@@ -229,7 +229,7 @@ end;
         </div>
     </div>
 </div>
-	
+
 <!-- footer -->
     <div class="row footer">
         <div class="row">

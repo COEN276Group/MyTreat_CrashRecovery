@@ -13,11 +13,11 @@
 		die('Could not connect: ' .mysql_error());
 	}
 
-	//choose database	
-	$db = mysqli_select_db($link,'mysql');
+	//choose database
+	$db = mysqli_select_db($link,'mytreat');
 	if(!$db){
 		die("Database not found".mysql_error());
-	}	
+	}
 
 	$select = 'SELECT u.f_name, u.l_name, e.*';
 	$from = ' FROM events as e, users as u';
@@ -41,7 +41,7 @@
 
 	$sql = $select . $from . $where;
 	//$sql = "SELECT u.f_name, u.l_name, e.* FROM events as e, users as u WHERE e.organizer_id = u.id and short_desc like '%".$_POST['value']."%';";
-	
+
 	$result = mysqli_query($link, $sql);
 	/*
 	0 f_name
@@ -60,7 +60,7 @@
 	13 category
 	14 mytreat
 	15 tag
-	*/	
+	*/
 	while($event = mysqli_fetch_array($result,MYSQLI_NUM)){
 		echo<<<end
 		<div class="entry">
@@ -71,7 +71,7 @@
 										<input name="event_id" value="$event[2]" style="display:none">
 										<a href="javascript:document.form$event[2].submit()">$event[10]</a>
 									</form>
-                                   	
+
                                 </div>
 								<div class="category">
                                    	<strong>Category:</strong>&nbsp;&nbsp;<span class="category-value">$event[13]</span>
@@ -98,5 +98,5 @@
          </div>
 end;
 }
-		
-?> 
+
+?>
