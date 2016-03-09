@@ -8,8 +8,17 @@
         <?php
 
 
-        $id = $_POST['event_id'];
-        echo $id;
+        echo "<h2>this page is working</h2>";
+        echo <<<end
+        <form action="myprofile_page.php" method="post">
+            <input name="user_id" value="10001" />
+            <button type="submit">Go to My Profile</button>
+        </form>
+
+
+
+
+end;
 
 
 

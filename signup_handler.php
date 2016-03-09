@@ -87,7 +87,7 @@
     $occ= $_POST['occupation'];
     $email = $_POST['email'];
     $psw = $_POST['psw'];
-    $pic_url = "images/content/profile_pics/".$_POST['pic_url'];
+    $pic_url = "images/profile_pics/".$_POST['pic_url'];
 
     $sql = "insert into users(f_name,l_name,DOB,gender,occupation,hobbies,description,email,psw,pic_url) values('$f_name','$l_name','$dob','$gender','$occ','$hobbies','$desc','$email','$psw','$pic_url')";
 	$result = mysql_query($sql,$conn) or die(mysql_error());

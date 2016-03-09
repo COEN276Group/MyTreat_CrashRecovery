@@ -14,56 +14,18 @@
 	<script type="text/javascript">
 	</script>
 </head>
-<body onresize="resizeInput()">
-<div class="row" id = "heading" style = "padding:0px;margin:0px;">
-      <div class="col8" id="title_row">
-          <a href = "home_page.php">
-            <h1 style = "color:white;text-align:center;font-size:10vmin;margin:10px">MyTreat.com</h1>
-          </a>
-        </div>
-        <div class="col4">
-          <br>
-          <div class="row">
-            <div class="col6">
-              <form id="login" action="#modal">
-                <a id="modal_trigger" href="#modal"><span class="login_button">Log In</span></a>
-              </form>
-            </div>
-            <div class="col6">
-              <form  id="signup" action="#">
-                <a href="signup_page.html"><span class="login_button">Sign Up</span></a>
-              </form>
-            </div>
-          </div>
-          <div class="row">
-            <div id="tfheader">
-              <form id="tfnewsearch" method="post" action="search_page.php">
-                <input type="text" id="search1" class="tftextinput" placeholder="Search Events" name="keyword" size="21" maxlength="120">
-				<input type="submit" value="search" class="tfbutton">
-              </form>
-              <div class="tfclear"></div>
-            </div>
-          </div>
-      </div>
-    </div>
-
-	<br/>
-
-
-	<div class = "row">
-		<div class = "col1"></div>
-		<div class = "col10" style = "padding:10px 20px">
-			<img src="images/general/home_theme.jpg" alt="not found" style = "width:100em">
-		</div>
-		<div class = "col1"></div>
-
-	</div>
-	<div class = "row">
-		<div class = "col1"></div>
-		<div class = "col10 sec">
 
 <?php
 	$cur_user = $_GET['cur_user'];
+	$logged_in = false;
+	if(isset($cur_user)){
+		echo "<script>alert(\"current user is: $cur_user\")</script>";
+		$logged_in = true;
+		$url_append = "?cur_user=$cur_user";
+	}else{
+		$url_append = "";
+	}
+
 	//database login info
 	$_servername = "localhost";
 	$_dbusr = "mt_developer";
@@ -73,13 +35,66 @@
 	if(!$conn){
 		die('Could not connect: ' .mysql_error());
 	}
-	echo '<script>alert(\'Connected Successfully\')</script>';
+	//echo '<script>alert(\'Connected Successfully\')</script>';
 	//choose database
 	$db = mysql_select_db("mytreat",$conn);
 	if(!$db){
 		die("Database not found".mysql_error());
 	}
 	$categories = array("dating"=>"Dating","food"=>"Food&Drink","enter"=>"Entertainment","outdoor"=>"Outdoor&Sports");
+
+	echo <<<end
+	<body onresize="resizeInput()">
+	<div class="row" id = "heading" style = "padding:0px;margin:0px;">
+	      <div class="col8" id="title_row">
+	          <a href = "home_page.php">
+	            <h1 style = "color:white;text-align:center;font-size:10vmin;margin:10px">MyTreat.com</h1>
+	          </a>
+	        </div>
+	        <div class="col4">
+	          <br>
+	          <div class="row">
+	            <div class="col6">
+	              <form id="login" action="#modal">
+	                <a id="modal_trigger" href="#modal"><span class="login_button">Log In</span></a>
+	              </form>
+	            </div>
+	            <div class="col6">
+	              <form  id="signup" action="#">
+	                <a href="signup_page.html"><span class="login_button">Sign Up</span></a>
+	              </form>
+	            </div>
+	          </div>
+	          <div class="row">
+	            <div id="tfheader">
+	              <form id="tfnewsearch" method="post" action="search_page.php">
+	                <input type="text" id="search1" class="tftextinput" placeholder="Search Events" name="keyword" size="21" maxlength="120">
+					<input type="submit" value="search" class="tfbutton">
+	              </form>
+	              <div class="tfclear"></div>
+	            </div>
+	          </div>
+	      </div>
+	    </div>
+
+		<br/>
+
+
+		<div class = "row">
+			<div class = "col1"></div>
+			<div class = "col10" style = "padding:10px 20px">
+				<img src="images/general/home_theme.jpg" alt="not found" style = "width:100em">
+			</div>
+			<div class = "col1"></div>
+
+		</div>
+		<div class = "row">
+			<div class = "col1"></div>
+			<div class = "col10 sec">
+
+
+
+end;
 
 	foreach($categories as $cat => $cat_value){
 		echo<<<end
@@ -93,7 +108,7 @@
 						<a><h2>$cat_value</h2></a>
 					</div>
 					<div class = "col2">
-						<form action="categories_page.php" method="post">
+						<form action="categories_page.php$url_append" method="post">
 							<input type="submit" value = "$cat_value" name = "category" class="more_button" />
 						</form>
 					</div>
@@ -135,7 +150,7 @@ end;
 												<div class = "organizer_info">
 													<div class = "col1"></div>
 													<div class = "col2">
-														<form name="form$row[7]" action="profile_page.php" method="post">
+														<form name="form$row[7]" action="profile_page.php$url_append" method="post">
 															<a href="javascript:document.form$row[7].submit()">
 																<input name = "user_id" value="$row[7]" style="display:none"/>
 																<img src="$row[5]" alt="not found"/>
@@ -156,13 +171,25 @@ end;
 											<div class = "row">
 												<div class = "col1"></div>
 												<div class = "col4">
-													<form action = "event_page.php" method="post">
+													<form action = "event_page.php$url_append" method="post">
 														<button type = "submit" name = "event_id" value = "$row[6]">More Info</button>
 													</form>
 												</div>
 												<div class = "col3"></div>
 												<div class = "col3">
-													<input class = "want_in_button" type = "button" value = "I Want In!">
+													<form action="application_handler.php$url_append" method="post">
+														<input name="user_id" value="$cur_user" style="display:none"/>
+														<input name="event_id" value="$row[6]" style="display:none"/>
+end;
+	if($logged_in){
+		echo '<input class = "want_in_button" type = "submit" value = "I Want In!">';
+	}else{
+		echo '<input type = "button" value = "I Want In!" onclick="alert(\'Please Sign in First!\')">';
+	}
+			echo<<<end
+
+													</form>
+
 												</div>
 											</div>
 
@@ -181,68 +208,72 @@ end;
 
 		</div>
 		<hr>
+
+
+
+
 end;
 
 	}
 	mysql_close($conn);
-?>
+	echo<<<end
+	</div>
+	<div class="col1"></div>
+	</div>
+	<!-- footer -->
+		<br><br>
+		<div class="row footer">
+			<div class="row">
+				<div class="col1 footer">
+					<a class="iconlink" href="https://www.instagram.com" >
+					  <img src="images/general/inst.png" width="30" alt="Image Not Found">
+					</a>
+				</div>
+				<div class="col1 footer">
+					<a class="iconlink" href="https://www.facebook.com">
+					  <img src="images/general/facebook.png" width="30" alt="Image Not Found">
+					</a>
+				</div>
+				<div class="col1 footer">
+					<a class="iconlink" href="https://github.com/COEN276Group/MyTreat/tree/dev">
+					  <img src="images/general/github.png" width="30" alt="Image Not Found">
+					</a>
+				</div>
 
-
-
-</div>
-<div class="col1"></div>
-</div>
-<!-- footer -->
-	<br><br>
-	<div class="row footer">
-		<div class="row">
-			<div class="col1 footer">
-				<a class="iconlink" href="https://www.instagram.com" >
-				  <img src="images/general/inst.png" width="30" alt="Image Not Found">
-				</a>
-			</div>
-			<div class="col1 footer">
-				<a class="iconlink" href="https://www.facebook.com">
-				  <img src="images/general/facebook.png" width="30" alt="Image Not Found">
-				</a>
-			</div>
-			<div class="col1 footer">
-				<a class="iconlink" href="https://github.com/COEN276Group/MyTreat/tree/dev">
-				  <img src="images/general/github.png" width="30" alt="Image Not Found">
-				</a>
-			</div>
-
-			<div class ="col6" id="connect">
-				<p id="footer_title">MyTreat.com</p>
+				<div class ="col6" id="connect">
+					<p id="footer_title">MyTreat.com</p>
+				</div>
 			</div>
 		</div>
+
+
+	<!--modal stuff-->
+
+	<div id="modal" class="popupContainer" style="display:none;">
+			<header class="popupHeader">
+				<span class="header_title">Login</span>
+				<span class="modal_close"><i class="fa fa-times"></i></span>
+			</header>
+
+			<section class="popupBody">
+				<!-- Username & Password Login form -->
+				<div class="user_login">
+					<form action="myprofile_page.php$url_append" method="post">
+						<label>Email / Username</label>
+						<input type="text" name = "username"/>
+						<br>
+						<label>Password</label>
+						<input type="password" name = "password"/>
+						<br>
+						<input type="submit" value="Login"  class="btn btn_theme" style="width:98%;font-size:18px;border:1px solid white"/>
+					</form>
+					<br>
+					<a href="signup_page.html" class = "new_user">New User? Click Here to Register</a>
+				</div>
+			</section>
 	</div>
+end;
+?>
 
-
-<!--modal stuff-->
-
-<div id="modal" class="popupContainer" style="display:none;">
-		<header class="popupHeader">
-			<span class="header_title">Login</span>
-			<span class="modal_close"><i class="fa fa-times"></i></span>
-		</header>
-
-		<section class="popupBody">
-			<!-- Username & Password Login form -->
-			<div class="user_login">
-				<form action="myprofile_page.php" method="post">
-					<label>Email / Username</label>
-					<input type="text" name = "username"/>
-					<br>
-					<label>Password</label>
-					<input type="password" name = "password"/>
-					<br>
-					<input type="submit" value="Login"  class="btn btn_theme" style="width:98%;font-size:18px;border:1px solid white"/>
-				</form>
-				<br>
-				<a href="signup_page.html" class = "new_user">New User? Click Here to Register</a>
-			</div>
-		</section>
-</div>
 </body>
 </html>

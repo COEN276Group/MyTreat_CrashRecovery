@@ -63,7 +63,7 @@
 
       <div class="row" id = "heading" style = "padding:0px;margin:0px;">
         <div class="col8" id="title_row">
-            <a href = "home_page.php?current_user=$user_id">
+            <a href = "home_page.php?cur_user=$user_id">
               <h1 style = "color:white;text-align:center;font-size:10vmin;margin:10px">MyTreat.com</h1>
             </a>
           </div>
@@ -122,7 +122,7 @@
                 <hr>
                 <p>Hobbies: $hob</p>
                 <p>Occupation Area: $occ</p>
-                <p>Places of Interests: Ocean beach, Gym, Swimming Pool</p>
+                <p>Places of Interests: $hob</p>
                 <p>Reach Me At: $email</p>
                 <br>
             </div>
