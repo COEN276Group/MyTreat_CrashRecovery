@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Search_Result</title>
+    <title>log_in</title>
     <link rel = "stylesheet" type = "text/css" href = "stylesheets/general_style.css">
     <link rel = "stylesheet" type = "text/css" href = "stylesheets/search_style.css">
     <link href= "https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
@@ -17,7 +17,7 @@
     });
     </script>
     <meta charset="utf-8">
-    <title>log in</title>
+    
 </head>
 <body onresize="resizeInput()">
     <!--header-->
@@ -84,7 +84,38 @@
 
 
     </style>
-    <div class="container">
+
+                               <?php
+                            $username = $_POST['username'];
+                            $password = $_POST['password'];
+                            $_servername = "localhost";
+                              $_dbusr = "mt_developer";
+                              $_dbpsw = "mytreat";
+                              //establish connection
+                              //echo "the earlier part is working";
+                              $conn = mysql_connect($_servername,$_dbusr,$_dbpsw);
+                              
+                              //echo "the latter part is working";
+                              if(!$conn){
+                                die('Could not connect: ' .mysql_error());
+                              }
+                              //echo 'Connected Successfully<br>';
+                              //choose database 
+                              $db = mysql_select_db("mytreat",$conn);
+                              if(!$db){
+                                die("Database not found".mysql_error());
+                              } 
+
+                            
+                            
+
+                            $sql = "select * from users where email = '$username' and psw='$password'";
+                            
+                            $result = mysql_query($sql, $conn) or die(mysql_error());
+                            if(!$re1 = mysql_fetch_array($result)){
+
+                echo<<<end3
+                <div class="container">
         <div class="row">
             <h1>Password or username wrong. Please re-enter your account infomation.</h1>
             <div class="col4"></div>
@@ -115,77 +146,39 @@
 
         </div>
     </div>
-    
+end3;
+            } else {
+                
+                $user_id = $re1[0];
+                echo<<<end4
+                <div class="container">
+        <div class="row">
+            <h1>You have successfully logged in, click link below to go to profile</h1>
+            <div class="col4"></div>
+            <div class="col3">
+                
+                    <form name = "form1" action="myprofile_page.php" method="post" id="login_f">
+                            <input  name="user_id" value="$user_id" style="display:none">
+                            <a href="javascript:document.form1.submit()">Click here for your profile page</a>
 
-                            <?php
+                    </form>
+            </div>
+            <div class="col4"></div>
 
-                            //database login info
-                            $keyword = $_POST['keyword'];
-                            $_servername = 'localhost';
-                            $_dbusr = 'mt_developer';
-                            $_dbpsw = 'mytreat';
-                            $_db = 'mysql';
-                            ini_set('display_errors',1);
-                            error_reporting(E_ALL);
-                            //establish connection
-                            $link = mysqli_connect($_servername,$_dbusr,$_dbpsw,$_db);
-                            if(!$link){
-                                die('Could not connect: ' .mysql_error());
-                            }
 
-                            //choose database
-                            $db = mysqli_select_db($link,'mytreat');
-                            if(!$db){
-                                die("Database not found".mysql_error());
-                            }
 
-                            $select = 'SELECT u.f_name, u.l_name, e.*';
-                            $from = ' FROM events as e, users as u';
-                            $where = " WHERE e.organizer_id = u.id and short_desc like '%".$keyword."%';";
-                            /*$opts = isset($_POST['filterOpts'])? $_POST['filterOpts'] : array('');
 
-                            if (in_array('dating', $opts)){
-                            $where .= " AND category = 'dating' ";
-                        }
+        </div>
+    </div>
 
-                        if (in_array('sports', $opts)){
-                        $where .= " AND category = 'outdoor' ";
-                    }
-
-                    if (in_array('food', $opts)){
-                    $where .= " AND category = 'food' ";
-                }
-                if (in_array('entertainment', $opts)){
-                $where .= " AND category = 'enter' ";
-            }*/
-
-            $sql = $select . $from . $where;
-            //$sql = "SELECT u.f_name, u.l_name, e.* FROM events as e, users as u WHERE e.organizer_id = u.id and short_desc like '%".$_POST['value']."%';";
-
-            $result = mysqli_query($link, $sql);
-            /*
-            0 f_name
-            1 l_name
-            2 id
-            3 organizer_id
-            4 event_time
-            5 street
-            6 city
-            7 state
-            8 zip
-            9 pic_url
-            10 title
-            11 short_desc
-            12 long_desc
-            13 category
-            14 mytreat
-            15 tag
-            */
-            
-
-            
+end4;
+            }
 
             ?>
+    
+    
+
+ 
 
 <br><br><br>
 <!-- footer -->

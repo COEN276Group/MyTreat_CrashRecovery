@@ -230,7 +230,7 @@ end;
 		<section class="popupBody">
 			<!-- Username & Password Login form -->
 			<div class="user_login">
-				<form action="myprofile_page.php" method="post">
+				<form action="login.php" method="post">
 					<label>Email / Username</label>
 					<input type="text" name = "username" required/>
 					<br>
