@@ -38,8 +38,15 @@ function resizeInput() {
 			r[i].style.width = "300px";
 		}
 	}
-	document.getElementById('screenwidth').innerHTML = "Outter: "+w+"<br>Inner: "+iw+"<br>Response: "+r.width;
     document.getElementById("search1").size=ww;
+
+	var cards = document.getElementsByClassName('back_content');
+	for(var i=0;i<cards.length;i++){
+		cards[i].style.fontSize = "2vmin";
+
+	}
+
+
 }
 function submit_form(){
 	$(this).parent().submit();

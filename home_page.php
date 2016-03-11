@@ -105,12 +105,12 @@ end;
 			</div>
 			<div class = "col10 sec">
 				<div class = "row">
-					<div class = "col10">
+					<div class = "col6">
 						<a><h2>$cat_value</h2></a>
 					</div>
-					<div class = "col2">
+					<div class = "col6">
 						<form action="categories_page.php$url_append" method="post">
-							<input type="submit" value = "$cat_value" name = "category" class="more_button" />
+							<input type="submit" value = "$cat_value" name = "category" class="more_button" style="float:right"/>
 						</form>
 					</div>
 				</div>
@@ -166,8 +166,11 @@ end;
 												</div>
 											</div>
 											<hr>
-											<p>
+											<p class="back_content">
 												$row[3]
+												<p class="height">
+
+												</p>
 											</p>
 											<div class = "row">
 												<div class = "col1"></div>

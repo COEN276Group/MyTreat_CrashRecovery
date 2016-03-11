@@ -13,6 +13,7 @@ body{
   background-color: #eee4f1;
   border-radius: 7px;
   overflow: hidden;
+  min-width: 500px;
 }
 .header_s{
   background-color: #9C8AA5;
@@ -52,31 +53,13 @@ body{
   color: #000;
 }
 .registration input[type="text"]{
-  display: block; 
-  width:90%; 
-  padding: 10px; 
-  border:1px solid #DDD; 
+  display: block;
+  width:90%;
+  padding: 10px;
+  border:1px solid #DDD;
   color:#666;
 }
 .profile_title{
   background-color: #9C8AA5;
   color: #ffffff;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
