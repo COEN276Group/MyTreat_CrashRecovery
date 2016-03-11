@@ -60,7 +60,7 @@
 <?php
   //database login info
   $organizer_id = $_POST['user_id'];
-  //$organizer_id = "10018";
+  //$organizer_id = "10019";
   $_servername = "localhost";
   $_dbusr = "mt_developer";
   $_dbpsw = "mytreat";
@@ -80,6 +80,11 @@
   } 
   $sql =  "select title,street, city, state, zip, event_time, long_desc, mytreat, pic_url from events where organizer_id=$organizer_id";
   $result = mysql_query($sql,$conn);
+  $result2 = mysql_query($sql,$conn);
+  if($result === FALSE) { 
+    die(mysql_error()); // TODO: better error handling
+  }
+ 
   /*$sql = "select name,location,date, description from events where EID='0002'";
   $result2 = mysql_query($sql,$link);
   $event2 = mysql_fetch_array($result2);*/
@@ -98,7 +103,7 @@
     <input type="submit" name= "new_event" value="$organizer_id">
   </form>
 end1;
-if (!$try = mysql_fetch_array($result)){
+if (!$try = mysql_fetch_array($result2)){
 
     echo<<<end6
     <div class="row">
@@ -114,7 +119,9 @@ if (!$try = mysql_fetch_array($result)){
 
 
 end6;
-  }
+  } else {
+
+
 while($event= mysql_fetch_array($result)){
         
     echo<<<end2
@@ -162,7 +169,7 @@ while($event= mysql_fetch_array($result)){
     <div class="col1"></div>
 end2;
         $inner_sql = "select u.pic_url from participants as p,events as e, users as u where p.event_id = e.id and u.id = p.user_id and e.organizer_id = $organizer_id";
-        $inner_result = mysql_query($inner_sql,$conn);
+        $inner_result = mysql_query($inner_sql, $conn);
         while($row = mysql_fetch_array($inner_result)){
             $pic = $row[0];
             //echo "<div class = \"col1 participant\"><a href=\"\"><img src=\"$pic\" alt=\"not found\"></a></div>";
@@ -213,6 +220,7 @@ echo<<<end4
 </div>
 end4;
 
+}
 }
 
  
