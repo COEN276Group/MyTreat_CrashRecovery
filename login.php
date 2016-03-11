@@ -120,7 +120,7 @@
                             $sql = "select * from users where email = '$username' and psw='$password'";
                             
                             $result = mysql_query($sql, $conn) or die(mysql_error());
-                            if(!$re1 = mysql_fetch_array($result)){
+                            if($re1 = mysql_fetch_array($result)){
 
                 echo<<<end3
                 <div class="container">
