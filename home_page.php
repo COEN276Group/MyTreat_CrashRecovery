@@ -88,6 +88,7 @@
 			<div class = "col1"></div>
 
 		</div>
+		<p id="screenwidth"></p>
 		<div class = "row">
 			<div class = "col1"></div>
 			<div class = "col10 sec">
@@ -115,7 +116,7 @@ end;
 				</div>
 				<br>
 
-				<div class = "row">
+				<div class = "response">
 end;
 
 
@@ -268,12 +269,6 @@ end;
 					<br>
 					<input type="submit" value="Login"  class="btn btn_theme" style="width:98%;font-size:18px;border:1px solid white"/>
 				</form>
-				<br>
-				<label>Password</label>
-				<input type="password" name = "password" required/>
-				<br>
-				<input type="submit" value="Login"  class="btn btn_theme" style="width:98%;font-size:18px;border:1px solid white"/>
-			</form>
 					<br>
 					<a href="signup_page.html" class = "new_user">New User? Click Here to Register</a>
 				</div>
