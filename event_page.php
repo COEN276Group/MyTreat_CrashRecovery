@@ -119,7 +119,7 @@
     </div>
     <div class="row">
       <div class="col2"></div>
-      <div class="col10">
+      <div class="col10 map-container">
         <iframe width="425" height="285" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.it/maps?q=$event[1], $event[2], $event[3], $event[4]&output=embed"></iframe>
       </div>
     <div class="col2"></div>
