@@ -51,6 +51,16 @@
 
 
 <?php
+    $cur_user = $_GET['cur_user'];
+    $logged_in = false;
+    if(isset($cur_user)){
+        echo "<script>alert(\"current user is: $cur_user\")</script>";
+        $logged_in = true;
+        $url_append = "?cur_user=$cur_user";
+    }else{
+        $url_append = "";
+    }
+
     $category = $_POST['category'];
     $category_query = "";
     $category_message = "";
@@ -175,7 +185,15 @@ end2;
         $inner_result = mysql_query($inner_sql,$conn);
         while($row = mysql_fetch_array($inner_result)){
             $pic = $row[1];
-            echo "<div class = \"col1 participant\"><a href=\"\"><img src=\"$pic\" alt=\"not found\"></a></div>";
+            //echo "<div class = \"col1 participant\"><a href=\"\"><img src=\"$pic\" alt=\"not found\"></a></div>";
+            echo<<<end4
+            <div class = "col1 participant"><form name="form$row[0]" action="profile_page.php$url_append" method="post">
+                                                            <a href="javascript:document.form$row[0].submit()">
+                                                                <input name = "user_id" value="$row[0]" style="display:none"/>
+                                                                <img src="$pic" alt="not found"/>
+                                                            </a>
+                                                        </form></div>
+end4;
         }
 
         echo <<<end3
