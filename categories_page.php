@@ -10,6 +10,7 @@
 	<script src="scripts/modal.js"></script>
 	<script src="scripts/category.js"></script>
 	<script src="scripts/general.js"></script>
+    <link rel="shortcut icon" href="images/general/favicon.ico" />
 </head>
 
 <body onresize="resizeInput()">
