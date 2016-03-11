@@ -22,7 +22,7 @@
     });
     </script>
 
-    <title>profile page</title>
+    <title>Profile Page</title>
 </head>
 <body onresize="resizeInput()">
 
@@ -48,7 +48,7 @@
             </div>
             <div class="row">
                 <div id="tfheader">
-                    <form id="tfnewsearch" method="get" action="search_result_page.php">
+                    <form id="tfnewsearch" method="get" action="search_page.php">
                         <input id="search1" type="text" class="tftextinput" name="q" size="21" maxlength="120"><input type="submit" value="search" class="tfbutton">
                     </form>
                     <div class="tfclear"></div>
@@ -208,7 +208,7 @@ end2;
                     <input type="submit" value="Login"  class="btn btn_theme" style="width:98%;font-size:18px;border:1px solid white"/>
                 </form>
                 <br>
-                <a href="signup_page.php" class = "new_user">New User? Click Here to Register</a>
+                <a href="signup_page.html" class = "new_user">New User? Click Here to Register</a>
             </div>
         </section>
     </div>
