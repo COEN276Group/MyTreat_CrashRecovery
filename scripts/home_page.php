@@ -270,5 +270,56 @@ end;
 </div>
 <div class="col1"></div>
 </div>
+<br><br>
+<div class="row footer">
+	<div class="row">
+		<div class="col1 footer">
+			<a class="iconlink" href="https://www.instagram.com" >
+			  <img src="images/general/inst.png" width="30" alt="Image Not Found">
+			</a>
+		</div>
+		<div class="col1 footer">
+			<a class="iconlink" href="https://www.facebook.com">
+			  <img src="images/general/facebook.png" width="30" alt="Image Not Found">
+			</a>
+		</div>
+		<div class="col1 footer">
+			<a class="iconlink" href="https://github.com/COEN276Group/MyTreat/tree/dev">
+			  <img src="images/general/github.png" width="30" alt="Image Not Found">
+			</a>
+		</div>
+
+		<div class ="col6" id="connect">
+			<p id="footer_title">MyTreat.com</p>
+		</div>
+	</div>
+</div>
+
+
+      <!--modal stuff-->
+
+	<div id="modal" class="popupContainer" style="display:none;">
+			<header class="popupHeader">
+				<span class="header_title">Login</span>
+				<span class="modal_close"><i class="fa fa-times"></i></span>
+			</header>
+
+			<section class="popupBody">
+				<!-- Username & Password Login form -->
+				<div class="user_login">
+					<form action="login.php" method="post">
+                    <label>Email / Username</label>
+                    <input type="text" name = "username" required/>
+                    <br>
+                    <label>Password</label>
+                    <input type="password" name = "password" required/>
+                    <br>
+                    <input type="submit" value="Login"  class="btn btn_theme" style="width:98%;font-size:18px;border:1px solid white"/>
+                </form>
+					<br>
+					<a href="signup_page.html" class = "new_user">New User? Click Here to Register</a>
+				</div>
+			</section>
+	</div>
 </body>
 </html>

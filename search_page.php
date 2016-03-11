@@ -43,7 +43,7 @@
             </div>
             <div class="row">
                 <div id="tfheader">
-                    <form id="tfnewsearch" method="post" action="">
+                    <form id="tfnewsearch" method="post" action="search_page.php">
                         <input id="search1" type="text" class="tftextinput" name="q" size="21" maxlength="120"><input type="submit" value="search" class="tfbutton">
                     </form>
                     <div class="tfclear"></div>
