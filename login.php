@@ -82,7 +82,15 @@
             font-family: open sans;
         }
 
-
+        .respon {
+            font-size: 2.5vmin;
+            max-width: 600px;
+        }
+        @media (min-width: 768px) {
+          .container {
+            width: 750px;
+          }
+        }
     </style>
 
                                <?php
@@ -116,10 +124,10 @@
 
                 echo<<<end3
                 <div class="container">
-        <div class="row">
+        <div class="row respon">
             <h1>Password or username wrong. Please re-enter your account infomation.</h1>
-            <div class="col4"></div>
-            <div class="col3" style="background-color:#F0F0F0; padding: 30px;">
+            <div class="col3"></div>
+            <div class="col6" style="background-color:#F0F0F0; padding: 30px;">
                 <header class="popupHeader" style="text-align:center;">
                     <span class="header_title">Login</span>
                     
@@ -139,7 +147,7 @@
                 </div>
 
             </div>
-            <div class="col4"></div>
+            <div class="col3"></div>
 
 
 
