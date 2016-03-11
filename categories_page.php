@@ -35,7 +35,7 @@
 			</div>
 			<div class="row">
 				<div id="tfheader">
-					<form id="tfnewsearch" method="get" action="search_result_page.php">
+					<form id="tfnewsearch" method="get" action="search_page.php">
 						<input id="search1" type="text" class="tftextinput" name="q" size="21" maxlength="120"><input type="submit" value="search" class="tfbutton">
 					</form>
 					<div class="tfclear"></div>
@@ -130,7 +130,7 @@ end1;
             <div class = "col6">
                 <div class = "row">
                     <div class = "row">
-                        <div class = "col9">
+                        <div class = "col7">
 							<form name = "form$e_id" action="event_page.php" method="post">
 								<input name="event_id" value = "$e_id" style="display:none" />
 								<a href="javascript:document.form$e_id.submit()">
@@ -139,7 +139,7 @@ end1;
 							</form>
 
 						</div>
-                        <div class = "col3 treat">
+                        <div class = "col5 treat">
                             $mytreat!
                         </div>
                     </div>
@@ -160,11 +160,12 @@ end1;
                         <div class = "row">$organizer_name</div>
                         <div class = "row">****</div>
                     </div>
-                    <div class = "col4"></div>
-                    <div class = "col2"></div>
+                    <div class = "col5"></div>
+                    
                     <div class = "col2">
                         <input class = "want_in_button" type = "button" value = "I Want In!">
                     </div>
+                    <div class = "col1"></div>
                 </div>
                 <hr>
                 <p>Already In:</p>
