@@ -276,15 +276,17 @@ end4;
   <section class="popupBody">
       <!-- Username & Password Login form -->
       <div class="user_login">
-        <form action="login.php" method="post">
+        <form>
           <label>Email / Username</label>
-          <input type="text" name = "username" required/>
+          <input type="text" />
           <br>
           <label>Password</label>
-          <input type="password" name = "password" required/>
+          <input type="password" />
           <br>
-          <input type="submit" value="Login"  class="btn btn_theme" style="width:98%;font-size:18px;border:1px solid white"/>
-        </form>
+          <div class="action_btns">
+            <div class=""><a href="myprofile_page.php" class="btn btn_theme">Login</a></div>
+        </div>
+    </form>
     <br>
     <a href="signup_page.html" class = "new_user">New User? Click Here to Register</a>
 </div>
