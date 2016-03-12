@@ -172,9 +172,15 @@ end1;
                         <div class = "row">****</div>
                     </div>
                     <div class = "col5"></div>
-                    
+
                     <div class = "col2">
-                        <input class = "want_in_button" type = "button" value = "I Want In!">
+end2;
+if($logged_in){
+	echo '<input class = "want_in_button" type = "submit" value = "I Want In!">';
+}else{
+	echo '<input type = "button" value = "I Want In!" onclick="alert(\'Please Sign in First!\')">';
+}
+			echo <<<end2
                     </div>
                     <div class = "col1"></div>
                 </div>
