@@ -55,7 +55,6 @@
     $cur_user = $_GET['cur_user'];
     $logged_in = false;
     if(isset($cur_user)){
-        echo "<script>alert(\"current user is: $cur_user\")</script>";
         $logged_in = true;
         $url_append = "?cur_user=$cur_user";
     }else{
@@ -163,7 +162,7 @@ end1;
                 </div>
                 <hr>
                 <div class = "row">
-                    
+
                     <div class = "col1 participant"><form name="form$row[1]" action="profile_page.php$url_append" method="post">
                                                             <a href="javascript:document.form$row[1].submit()">
                                                                 <input name = "user_id" value="$row[1]" style="display:none"/>

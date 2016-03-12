@@ -67,28 +67,28 @@
   //establish connection
   //echo "the earlier part is working";
   $conn = mysql_connect($_servername,$_dbusr,$_dbpsw);
-  
+
   //echo "the latter part is working";
   if(!$conn){
     die('Could not connect: ' .mysql_error());
   }
   //echo 'Connected Successfully<br>';
-  //choose database 
+  //choose database
   $db = mysql_select_db("mytreat",$conn);
   if(!$db){
     die("Database not found".mysql_error());
-  } 
+  }
   $sql = "select title,street, city, state, zip, event_time, long_desc, mytreat, pic_url from events where id = $event_id";
   //echo $sql;
   //$sql = "select name,location,date, description from events where id = \"$event_id\"";
   $result = mysql_query($sql,$conn);
-  if($result === FALSE) { 
+  if($result === FALSE) {
     die(mysql_error()); // TODO: better error handling
   }
   //echo $result;
 
   $event = mysql_fetch_array($result);
-  if($event=== FALSE) { 
+  if($event=== FALSE) {
     die(mysql_error()); // TODO: better error handling
   }
 
@@ -162,10 +162,10 @@ echo<<<end2
     <div class="col1"></div>
 </div><br>
 </div>
-      
+
 end2;
   //}
-?>  
+?>
 
 <div class="row footer">
     <div class="row">

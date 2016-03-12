@@ -19,7 +19,6 @@
 	$cur_user = $_GET['cur_user'];
 	$logged_in = false;
 	if(isset($cur_user)){
-		echo "<script>alert(\"current user is: $cur_user\")</script>";
 		$logged_in = true;
 		$url_append = "?cur_user=$cur_user";
 	}else{
