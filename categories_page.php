@@ -163,9 +163,13 @@ end1;
                 </div>
                 <hr>
                 <div class = "row">
-                    <div class = "col1">
-                        <img src="$organizer_pic" alt="not found">
-                    </div>
+                    
+                    <div class = "col1 participant"><form name="form$row[1]" action="profile_page.php$url_append" method="post">
+                                                            <a href="javascript:document.form$row[1].submit()">
+                                                                <input name = "user_id" value="$row[1]" style="display:none"/>
+                                                                <img src="$organizer_pic" alt="not found"/>
+                                                            </a>
+                                                        </form></div>
                     <div class = "col1"></div>
                     <div class = "col2">
                         <div class = "row">$organizer_name</div>
