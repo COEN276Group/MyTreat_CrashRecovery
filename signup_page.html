@@ -72,25 +72,25 @@
 					<form action="signup_handler.php" method="post">
 						<img id="pic" src="images/general/default.jpg" height="200" alt="Image preview...">
 						<br>
-						<input id = "pic_url" name = "pic_url" style="display:none"/>
-						<input type="file" onchange="previewFile()"><br>
+						<input id = "pic_url" name = "pic_url" style="display:none" required/>
+						<input type="file" onchange="previewFile()" required><br>
 						<br>
-						<input type="text" name="email" class="input" placeholder="Username/Email"><br/>
-						<input id="psw1" type="text" name="psw"  class="input" placeholder="Password"><br/>
-						<input id="psw2" type = "text" name = "con_psw" class = "input" placeholder="Confirm Password" onblur="passwordValidate()"><br>
-						<input type="text" name="f_name" class="input" placeholder = "firstname"><br/>
-						<input type="text" name="l_name" size="30" class="input" placeholder = "lastname"><br/>
+						<input type="text" name="email" class="input" placeholder="Username/Email" required><br/>
+						<input id="psw1" type="text" name="psw"  class="input" placeholder="Password" required><br/>
+						<input id="psw2" type = "text" name = "con_psw" class = "input" placeholder="Confirm Password" onblur="passwordValidate()" required><br>
+						<input type="text" name="f_name" class="input" placeholder = "firstname" required><br/>
+						<input type="text" name="l_name" size="30" class="input" placeholder = "lastname" required><br/>
 						<input type="radio" name="gender" value="male" checked> Male
 					  	<input type="radio" name="gender" value="female"> Female
 					  	<input type="radio" name="gender" value="other"> Other
 					  	<br>
 
 
-						<input type="text" name="dob" size="30" class="input" placeholder="Date of Birth">
+						<input type="text" name="dob" size="30" class="input" placeholder="Date of Birth" required>
 						<br>
-						<input type="text" name="occupation" class="input" placeholder="Occupation">
+						<input type="text" name="occupation" class="input" placeholder="Occupation" required>
 						<br/>
-						<input type="text" name="hobbies" class="input" placeholder="Personal Interests">
+						<input type="text" name="hobbies" class="input" placeholder="Personal Interests" required>
 						<br/>
 
 						<br>

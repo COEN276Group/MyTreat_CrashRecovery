@@ -84,7 +84,7 @@
 				$o_id = (int) $_POST['new_event'];
 
 				//echo isset($o_id);
-				echo $o_id;
+				//echo $o_id;
 				
 				
 				//echo "111";
@@ -148,7 +148,7 @@ end1;
 	echo $long_des;	*/				  
 	$SQL = "insert into events (organizer_id, event_time, street, city, state, zip, pic_url, title, short_desc, long_desc, category, mytreat, tag) VALUES ($o_id, '$time', '$st_ad', '$city', '$state', '$zipcode', '29102910', '$name', '$short_des', '$long_des', '$cat', '$pay_type', '$tag')";
 	$result = mysql_query($SQL);
-	die(mysql_error());
+	//die(mysql_error());
 						
 ?>
 
