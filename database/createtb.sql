@@ -1,3 +1,7 @@
+CREATE USER 'mt_developer'@'localhost' IDENTIFIED BY 'mytreat';
+GRANT ALL PRIVILEGES ON * . * TO 'mt_developer'@'localhost';
+FLUSH PRIVILEGES;
+
 create table users(
 	id int auto_increment,
 	f_name char(30),
