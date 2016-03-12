@@ -3,6 +3,13 @@
 
 <?php
     $user_id = $_POST['user_id'];
+    $logged_in = false;
+    if(isset($cur_user)){
+        $logged_in = true;
+        $url_append = "?cur_user=$cur_user";
+    }else{
+        $url_append = "";
+    }
     //database login info
     $_servername = "localhost";
     $_dbusr = "mt_developer";
@@ -12,7 +19,6 @@
     if(!$conn){
         die('Could not connect: ' .mysql_error());
     }
-    echo '<script>alert(\'Connected Successfully\')</script>';
     //choose database
     $db = mysql_select_db("mytreat",$conn);
     if(!$db){

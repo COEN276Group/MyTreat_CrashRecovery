@@ -4,3 +4,6 @@ function resizeInput() {
     var ww = w*0.01+"";
     document.getElementById("search1").size=ww;
 }
+function checkEmpty(){
+    $(this).
+}

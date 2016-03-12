@@ -58,6 +58,14 @@
 
 
 <?php
+    $cur_user = $_GET['cur_user'];
+    $logged_in = false;
+    if(isset($cur_user)){
+        $logged_in = true;
+        $url_append = "?cur_user=$cur_user";
+    }else{
+        $url_append = "";
+    }
   //database login info
   $organizer_id = $_POST['user_id'];
   //$organizer_id = "10019";
@@ -67,24 +75,24 @@
   //establish connection
   //echo "the earlier part is working";
   $conn = mysql_connect($_servername,$_dbusr,$_dbpsw);
-  
+
   //echo "the latter part is working";
   if(!$conn){
     die('Could not connect: ' .mysql_error());
   }
   //echo 'Connected Successfully<br>';
-  //choose database 
+  //choose database
   $db = mysql_select_db("mytreat",$conn);
   if(!$db){
     die("Database not found".mysql_error());
-  } 
+  }
   $sql =  "select title,street, city, state, zip, event_time, long_desc, mytreat, pic_url, id from events where organizer_id=$organizer_id";
   $result = mysql_query($sql,$conn);
   $result2 = mysql_query($sql,$conn);
-  if($result === FALSE) { 
+  if($result === FALSE) {
     die(mysql_error()); // TODO: better error handling
   }
- 
+
   /*$sql = "select name,location,date, description from events where EID='0002'";
   $result2 = mysql_query($sql,$link);
   $event2 = mysql_fetch_array($result2);*/
@@ -123,7 +131,7 @@ end6;
 
 
 while($event= mysql_fetch_array($result)){
-        
+
     echo<<<end2
 
 <div class="row sec">
@@ -228,8 +236,8 @@ echo<<<end5
 end5;
 }
 
- 
-?>  
+
+?>
 
 
 
@@ -305,4 +313,3 @@ end5;
 </div>
 </body>
 </html>
-

@@ -58,6 +58,14 @@
 
 
 <?php
+    $cur_user = $_GET['cur_user'];
+    $logged_in = false;
+    if(isset($cur_user)){
+        $logged_in = true;
+        $url_append = "?cur_user=$cur_user";
+    }else{
+        $url_append = "";
+    }
   $event_id = $_POST['event_id'];
   //echo $event_id;
   //database login info

@@ -6,7 +6,6 @@ function previewFile(){
     var url_input = document.querySelector('#pic_url');
     reader.onloadend = function () {
         preview.src = reader.result;
-
     }
     if (file) {
         reader.readAsDataURL(file);
@@ -17,7 +16,6 @@ function previewFile(){
         preview.src = "";
         url_input.value = "";
     }
-
 }
 previewImg();
 

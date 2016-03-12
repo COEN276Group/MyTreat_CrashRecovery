@@ -46,7 +46,7 @@
 	<body onresize="resizeInput()">
 	<div class="row" id = "heading" style = "padding:0px;margin:0px;">
 	      <div class="col8" id="title_row">
-	          <a href = "home_page.php">
+	          <a href = "home_page.php$url_append">
 	            <h1 style = "color:white;text-align:center;font-size:10vmin;margin:10px">MyTreat.com</h1>
 	          </a>
 	        </div>
@@ -66,7 +66,7 @@
 	          </div>
 	          <div class="row">
 	            <div id="tfheader">
-	              <form id="tfnewsearch" method="post" action="search_page.php">
+	              <form id="tfnewsearch" method="post" action="search_page.php$url_append">
 	                <input type="text" id="search1" class="tftextinput" placeholder="Search Events" name="keyword" size="21" maxlength="120">
 					<input type="submit" value="search" class="tfbutton">
 	              </form>
@@ -262,7 +262,7 @@ end;
 		<section class="popupBody">
 			<!-- Username & Password Login form -->
 			<div class="user_login">
-				<form action="login.php" method="post">
+				<form action="login.php$url_append" method="post">
 					<label>Email / Username</label>
 					<input type="text" name = "username" required/>
 					<br>

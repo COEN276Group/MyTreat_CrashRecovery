@@ -95,36 +95,43 @@
                         <br style="clear:both"/>
                         <div id="content">
 
-                            <?php
+<?php
+            $cur_user = $_GET['cur_user'];
+            $logged_in = false;
+            if(isset($cur_user)){
+                $logged_in = true;
+                $url_append = "?cur_user=$cur_user";
+            }else{
+                $url_append = "";
+            }
+            //database login info
+            $keyword = $_POST['keyword'];
+            $_servername = 'localhost';
+            $_dbusr = 'mt_developer';
+            $_dbpsw = 'mytreat';
+            $_db = 'mysql';
+            ini_set('display_errors',1);
+            error_reporting(E_ALL);
+            //establish connection
+            $link = mysqli_connect($_servername,$_dbusr,$_dbpsw,$_db);
+            if(!$link){
+                die('Could not connect: ' .mysql_error());
+            }
 
-                            //database login info
-                            $keyword = $_POST['keyword'];
-                            $_servername = 'localhost';
-                            $_dbusr = 'mt_developer';
-                            $_dbpsw = 'mytreat';
-                            $_db = 'mysql';
-                            ini_set('display_errors',1);
-                            error_reporting(E_ALL);
-                            //establish connection
-                            $link = mysqli_connect($_servername,$_dbusr,$_dbpsw,$_db);
-                            if(!$link){
-                                die('Could not connect: ' .mysql_error());
-                            }
+            //choose database
+            $db = mysqli_select_db($link,'mytreat');
+            if(!$db){
+                die("Database not found".mysql_error());
+            }
 
-                            //choose database
-                            $db = mysqli_select_db($link,'mytreat');
-                            if(!$db){
-                                die("Database not found".mysql_error());
-                            }
+            $select = 'SELECT u.f_name, u.l_name, e.*';
+            $from = ' FROM events as e, users as u';
+            $where = " WHERE e.organizer_id = u.id and short_desc like '%".$keyword."%';";
+            /*$opts = isset($_POST['filterOpts'])? $_POST['filterOpts'] : array('');
 
-                            $select = 'SELECT u.f_name, u.l_name, e.*';
-                            $from = ' FROM events as e, users as u';
-                            $where = " WHERE e.organizer_id = u.id and short_desc like '%".$keyword."%';";
-                            /*$opts = isset($_POST['filterOpts'])? $_POST['filterOpts'] : array('');
-
-                            if (in_array('dating', $opts)){
-                            $where .= " AND category = 'dating' ";
-                        }
+            if (in_array('dating', $opts)){
+            $where .= " AND category = 'dating' ";
+            }
 
                         if (in_array('sports', $opts)){
                         $where .= " AND category = 'outdoor' ";

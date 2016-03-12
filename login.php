@@ -17,7 +17,7 @@
     });
     </script>
     <meta charset="utf-8">
-    
+
 </head>
 <body onresize="resizeInput()">
     <!--header-->
@@ -94,6 +94,14 @@
     </style>
 
                                <?php
+                               $cur_user = $_GET['cur_user'];
+                               $logged_in = false;
+                               if(isset($cur_user)){
+                                   $logged_in = true;
+                                   $url_append = "?cur_user=$cur_user";
+                               }else{
+                                   $url_append = "";
+                               }
                             $username = $_POST['username'];
                             $password = $_POST['password'];
                             $_servername = "localhost";
@@ -102,27 +110,27 @@
                               //establish connection
                               //echo "the earlier part is working";
                               $conn = mysql_connect($_servername,$_dbusr,$_dbpsw);
-                              
+
                               //echo "the latter part is working";
                               if(!$conn){
                                 die('Could not connect: ' .mysql_error());
                               }
                               //echo 'Connected Successfully<br>';
-                              //choose database 
+                              //choose database
                               $db = mysql_select_db("mytreat",$conn);
                               if(!$db){
                                 die("Database not found".mysql_error());
-                              } 
+                              }
 
-                            
-                            
+
+
 
                             $sql = "select * from users where email = '$username' and psw='$password'";
-                            
+
                             $result = mysql_query($sql, $conn) or die(mysql_error());
                             $result2 = mysql_query($sql, $conn) or die(mysql_error());
-                           
-                            
+
+
                             if(!$re1 = mysql_fetch_array($result)){
 
                 echo<<<end3
@@ -133,7 +141,7 @@
             <div class="col6" style="background-color:#F0F0F0; padding: 30px;">
                 <header class="popupHeader" style="text-align:center;">
                     <span class="header_title">Login</span>
-                    
+
                 </header>
                 <div class="user_login">
                     <form action="login.php" method="post" id="login_f">
@@ -161,14 +169,14 @@ end3;
             } else {
                 $re2=mysql_fetch_array($result2);
                 $user_id = $re1[0];
-                
+
                 echo<<<end4
                 <div class="container">
         <div class="row">
             <h1>You have successfully logged in, click link below to go to profile</h1>
             <div class="col4"></div>
             <div class="col3">
-                
+
                     <form name = "form1" action="myprofile_page.php" method="post" id="login_f">
                             <input  name="user_id" value="$user_id" style="display:none">
                             <a href="javascript:document.form1.submit()">Click here for your profile page</a>
@@ -187,10 +195,10 @@ end4;
             }
 
             ?>
-    
-    
 
- 
+
+
+
 
 <br><br><br>
 <!-- footer -->

@@ -63,30 +63,39 @@
 				<h2 style = "margin:10px; color:white">Create Your Events</h2>
 			</div>
 <?php
+
+					$cur_user = $_GET['cur_user'];
+					$logged_in = false;
+					if(isset($cur_user)){
+						$logged_in = true;
+						$url_append = "?cur_user=$cur_user";
+					}else{
+						$url_append = "";
+					}
 						$_servername = "localhost";
 					  $_dbusr = "mt_developer";
 					  $_dbpsw = "mytreat";
 					  //establish connection
 					  //echo "the earlier part is working";
 					  $conn= mysql_connect($_servername,$_dbusr,$_dbpsw);
-					  
+
 					  //echo "the latter part is working";
 					  if(!$conn){
 					    die('Could not connect: ' .mysql_error());
 					  }
 					  //echo 'Connected Successfully<br>';
-					  //choose database 
+					  //choose database
 					  $db = mysql_select_db("mytreat",$conn);
 					  if(!$db){
 					    die("Database not found".mysql_error());
-					  } 
+					  }
 
 				$o_id = (int) $_POST['new_event'];
 
 				//echo isset($o_id);
 				//echo $o_id;
-				
-				
+
+
 				//echo "111";
 	$name = $_POST['event_title'];
 	$cat = $_POST['event_category'];
@@ -101,7 +110,7 @@
 	$long_des = $_POST['long_describe'];
 	$pic_url = "images/content/".$_POST['pic_url'];
 		echo<<<end1
-				<form action="add_events_page.php" method="post">
+				<form action="add_events_page.php$url_append" method="post">
 					<img id="pic" src="images/general/edefault.png" height="200" alt="Image preview...">
 					<br>
 					<input id="img_upload" type="file" onchange="previewFile()" required><br>
@@ -126,32 +135,12 @@
 					<br>
 					Full description of the event<br/>
 					<textarea name="long_describe" rows="10" cols="50" style="color:#AE89AF;" required></textarea><br/>
-				
-				<!-- <form action="event_page.php"> -->
+
+				<!-- <form action="event_page.php$url_append"> -->
 					<input  name="new_event" value="$o_id" style="display:none">
 					<input id="submit_button" name="submit_button" type="submit" value="Create Event" class="button" style="font-size:20px">
 				</form>
-end1;
-	/*session_start();
-	$organizer_id = $_SESSION['organizer'];
-	error_reporting(E_ALL);
-	echo "$organizer_id";*/
-	/*echo $name;
-	echo $cat;
-	echo $time;
-	echo $tag;
-	echo $st_ad;
-	echo $city;
-	echo $state;
-	echo $zipcode;
-	echo $pay_type;
-	echo $short_des;
-	echo $long_des;	*/				  
-	$SQL = "insert into events (organizer_id, event_time, street, city, state, zip, pic_url, title, short_desc, long_desc, category, mytreat, tag) VALUES ($o_id, '$time', '$st_ad', '$city', '$state', '$zipcode', '$pic_url', '$name', '$short_des', '$long_des', '$cat', '$pay_type', '$tag')";
-	$result = mysql_query($SQL);
-	//die(mysql_error());
-						
-?>
+
 
 			</div>
 		</div>
@@ -196,7 +185,7 @@ end1;
 			<section class="popupBody">
 				<!-- Username & Password Login form -->
 				<div class="user_login">
-					<form action="login.php" method="post">
+					<form action="login.php$url_append" method="post">
 					<label>Email / Username</label>
 					<input type="text" name = "username" required/>
 					<br>
@@ -211,3 +200,24 @@ end1;
 			</section>
 	</div>
 </body>
+end1;
+	/*session_start();
+	$organizer_id = $_SESSION['organizer'];
+	error_reporting(E_ALL);
+	echo "$organizer_id";*/
+	/*echo $name;
+	echo $cat;
+	echo $time;
+	echo $tag;
+	echo $st_ad;
+	echo $city;
+	echo $state;
+	echo $zipcode;
+	echo $pay_type;
+	echo $short_des;
+	echo $long_des;	*/
+	$SQL = "insert into events (organizer_id, event_time, street, city, state, zip, pic_url, title, short_desc, long_desc, category, mytreat, tag) VALUES ($o_id, '$time', '$st_ad', '$city', '$state', '$zipcode', '$pic_url', '$name', '$short_des', '$long_des', '$cat', '$pay_type', '$tag')";
+	$result = mysql_query($SQL);
+	//die(mysql_error());
+
+?>
