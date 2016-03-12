@@ -116,9 +116,9 @@
 					  } 
 
 				$o_id = $_POST['new_event'];
-				//echo isset($o_id);
 
-				//echo $o_id;
+				//echo isset($o_id);
+				int intval ( mixed $o_id [, int $base = 10 ] )
 				
 				//echo "111";
 	$name = $_POST['event_title'];
@@ -147,9 +147,9 @@
 	echo $pay_type;
 	echo $short_des;
 	echo $long_des;	*/				  
-	$SQL = "insert into events (organizer_id, event_time, street, city, state, zip, pic_url, title, short_desc, long_desc, category, mytreat, tag) VALUES (10001, '$time', '$st_ad', '$city', '$state', '$zipcode', '29102910', '$name', '$short_des', '$long_des', '$cat', '$pay_type', '$tag')";
+	$SQL = "insert into events (organizer_id, event_time, street, city, state, zip, pic_url, title, short_desc, long_desc, category, mytreat, tag) VALUES ($o_id, '$time', '$st_ad', '$city', '$state', '$zipcode', '29102910', '$name', '$short_des', '$long_des', '$cat', '$pay_type', '$tag')";
 	$result = mysql_query($SQL);
-	//die(mysql_error());
+	die(mysql_error());
 						
 ?>
 
