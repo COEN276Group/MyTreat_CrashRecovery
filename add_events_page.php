@@ -104,7 +104,7 @@
 				<form action="add_events_page.php" method="post">
 					<img id="pic" src="images/general/edefault.png" height="200" alt="Image preview...">
 					<br>
-					<input id="img_upload" type="file" onchange="previewFile()"><br>
+					<input id="img_upload" type="file" onchange="previewFile()" required><br>
 					<input id="pic_url" name = "pic_url" style="display:none" required/>
 					<br>
 					General Info<br/>
