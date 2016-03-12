@@ -120,7 +120,10 @@
                             $sql = "select * from users where email = '$username' and psw='$password'";
                             
                             $result = mysql_query($sql, $conn) or die(mysql_error());
-                            if($re1 = mysql_fetch_array($result)){
+                            $result2 = mysql_query($sql, $conn) or die(mysql_error());
+                           
+                            
+                            if(!$re1 = mysql_fetch_array($result)){
 
                 echo<<<end3
                 <div class="container">
@@ -156,8 +159,9 @@
     </div>
 end3;
             } else {
-                
+                $re2=mysql_fetch_array($result2);
                 $user_id = $re1[0];
+                
                 echo<<<end4
                 <div class="container">
         <div class="row">
