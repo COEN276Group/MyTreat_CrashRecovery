@@ -99,32 +99,33 @@
 	$pay_type = $_POST['pay_type'];
 	$short_des = $_POST['short_describe'];
 	$long_des = $_POST['long_describe'];
+	$pic_url = "images/content/".$_POST['pic_url'];
 		echo<<<end1
 				<form action="add_events_page.php" method="post">
 					<img id="pic" src="images/general/edefault.png" height="200" alt="Image preview...">
 					<br>
 					<input id="img_upload" type="file" onchange="previewFile()"><br>
-					<input id="pic_url" name = "pic_url"/>
+					<input id="pic_url" name = "pic_url" style="display:none" required/>
 					<br>
 					General Info<br/>
-					<input type="text" name="event_title" class="input" placeholder = "Event Title"><br/>
-					<input type="text" name="event_category" size="30" class="input" placeholder = "Category"><br/>
-					<input type="text" name="event_time" size="30" class="input" placeholder = "Time format: YYYY/MM/DD"><br/>
-					<input type="text" name="event_tag" size="30" class="input" placeholder = "Add tag: e.g. #Dating"><br/>
+					<input type="text" name="event_title" class="input" placeholder = "Event Title" required><br/>
+					<input type="text" name="event_category" size="30" class="input" placeholder = "Category" required><br/>
+					<input type="text" name="event_time" size="30" class="input" placeholder = "Time format: YYYY/MM/DD" required><br/>
+					<input type="text" name="event_tag" size="30" class="input" placeholder = "Add tag: e.g. #Dating" required><br/>
 					Location<br/>
-					<input type="text" name="street_address" size="30" class="input" placeholder = "Street Address"><br/>
-					<input type="text" name="city" size="30" class="input" placeholder = "City"><br/>
-					<input type="text" name="state" size="30" class="input" placeholder = "State"><br/>
-					<input type="text" name="zipcode" size="30" class="input" placeholder = "zipcode"><br/>
+					<input type="text" name="street_address" size="30" class="input" placeholder = "Street Address" required><br/>
+					<input type="text" name="city" size="30" class="input" placeholder = "City" required><br/>
+					<input type="text" name="state" size="30" class="input" placeholder = "State" required><br/>
+					<input type="text" name="zipcode" size="30" class="input" placeholder = "zipcode" required><br/>
 					<input type="radio" name="pay_type" value="My Treat" checked> My Treat
 				  	<input type="radio" name="pay_type" value="Split"> Split
 				  	<br>
 					<br>
 					Short description of the event<br/>
-					<textarea name="short_describe" rows="10" cols="50" style="color:#AE89AF;"></textarea><br/>
+					<textarea name="short_describe" rows="10" cols="50" style="color:#AE89AF;" required></textarea><br/>
 					<br>
 					Full description of the event<br/>
-					<textarea name="long_describe" rows="10" cols="50" style="color:#AE89AF;"></textarea><br/>
+					<textarea name="long_describe" rows="10" cols="50" style="color:#AE89AF;" required></textarea><br/>
 				
 				<!-- <form action="event_page.php"> -->
 					<input  name="new_event" value="$o_id" style="display:none">
@@ -146,7 +147,7 @@ end1;
 	echo $pay_type;
 	echo $short_des;
 	echo $long_des;	*/				  
-	$SQL = "insert into events (organizer_id, event_time, street, city, state, zip, pic_url, title, short_desc, long_desc, category, mytreat, tag) VALUES ($o_id, '$time', '$st_ad', '$city', '$state', '$zipcode', '29102910', '$name', '$short_des', '$long_des', '$cat', '$pay_type', '$tag')";
+	$SQL = "insert into events (organizer_id, event_time, street, city, state, zip, pic_url, title, short_desc, long_desc, category, mytreat, tag) VALUES ($o_id, '$time', '$st_ad', '$city', '$state', '$zipcode', '$pic_url', '$name', '$short_des', '$long_des', '$cat', '$pay_type', '$tag')";
 	$result = mysql_query($SQL);
 	//die(mysql_error());
 						
