@@ -62,7 +62,44 @@
 			<div class="row header_s" style = "margin-bottom:50px">
 				<h2 style = "margin:10px; color:white">Create Your Events</h2>
 			</div>
+<?php
+						$_servername = "localhost";
+					  $_dbusr = "mt_developer";
+					  $_dbpsw = "mytreat";
+					  //establish connection
+					  //echo "the earlier part is working";
+					  $conn= mysql_connect($_servername,$_dbusr,$_dbpsw);
+					  
+					  //echo "the latter part is working";
+					  if(!$conn){
+					    die('Could not connect: ' .mysql_error());
+					  }
+					  //echo 'Connected Successfully<br>';
+					  //choose database 
+					  $db = mysql_select_db("mytreat",$conn);
+					  if(!$db){
+					    die("Database not found".mysql_error());
+					  } 
 
+				$o_id = (int) $_POST['new_event'];
+
+				//echo isset($o_id);
+				echo $o_id;
+				
+				
+				//echo "111";
+	$name = $_POST['event_title'];
+	$cat = $_POST['event_category'];
+	$time = $_POST['event_time'];
+	$tag = $_POST['event_tag'];
+	$st_ad = $_POST['street_address'];
+	$city = $_POST['city'];
+	$state = $_POST['state'];
+	$zipcode = $_POST['zipcode'];
+	$pay_type = $_POST['pay_type'];
+	$short_des = $_POST['short_describe'];
+	$long_des = $_POST['long_describe'];
+		echo<<<end1
 				<form action="add_events_page.php" method="post">
 					<img id="pic" src="images/general/edefault.png" height="200" alt="Image preview...">
 					<br>
@@ -90,48 +127,10 @@
 					<textarea name="long_describe" rows="10" cols="50" style="color:#AE89AF;"></textarea><br/>
 				
 				<!-- <form action="event_page.php"> -->
-				
+					<input  name="new_event" value="$o_id" style="display:none">
 					<input id="submit_button" name="submit_button" type="submit" value="Create Event" class="button" style="font-size:20px">
 				</form>
-				<?php
-
-
-
-						$_servername = "localhost";
-					  $_dbusr = "mt_developer";
-					  $_dbpsw = "mytreat";
-					  //establish connection
-					  //echo "the earlier part is working";
-					  $conn= mysql_connect($_servername,$_dbusr,$_dbpsw);
-					  
-					  //echo "the latter part is working";
-					  if(!$conn){
-					    die('Could not connect: ' .mysql_error());
-					  }
-					  //echo 'Connected Successfully<br>';
-					  //choose database 
-					  $db = mysql_select_db("mytreat",$conn);
-					  if(!$db){
-					    die("Database not found".mysql_error());
-					  } 
-
-				$o_id = $_POST['new_event'];
-
-				//echo isset($o_id);
-				int intval ( mixed $o_id [, int $base = 10 ] )
-				
-				//echo "111";
-	$name = $_POST['event_title'];
-	$cat = $_POST['event_category'];
-	$time = $_POST['event_time'];
-	$tag = $_POST['event_tag'];
-	$st_ad = $_POST['street_address'];
-	$city = $_POST['city'];
-	$state = $_POST['state'];
-	$zipcode = $_POST['zipcode'];
-	$pay_type = $_POST['pay_type'];
-	$short_des = $_POST['short_describe'];
-	$long_des = $_POST['long_describe'];
+end1;
 	/*session_start();
 	$organizer_id = $_SESSION['organizer'];
 	error_reporting(E_ALL);

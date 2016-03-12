@@ -78,7 +78,7 @@
   if(!$db){
     die("Database not found".mysql_error());
   } 
-  $sql =  "select title,street, city, state, zip, event_time, long_desc, mytreat, pic_url from events where organizer_id=$organizer_id";
+  $sql =  "select title,street, city, state, zip, event_time, long_desc, mytreat, pic_url, id from events where organizer_id=$organizer_id";
   $result = mysql_query($sql,$conn);
   $result2 = mysql_query($sql,$conn);
   if($result === FALSE) { 
@@ -125,6 +125,7 @@ end6;
 while($event= mysql_fetch_array($result)){
         
     echo<<<end2
+
 <div class="row sec">
     <div class="col4">
       <h2>$event[0]</h2><br><br>
@@ -168,7 +169,7 @@ while($event= mysql_fetch_array($result)){
 <div class="row sec" id="my_event_people_1">
     <div class="col1"></div>
 end2;
-        $inner_sql = "select u.pic_url from participants as p,events as e, users as u where p.event_id = e.id and u.id = p.user_id and e.organizer_id = $organizer_id";
+        $inner_sql = "select u.pic_url from participants as p,events as e, users as u where p.event_id = e.id and p.event_id = $event[9] and u.id = p.user_id and e.organizer_id = $organizer_id";
         $inner_result = mysql_query($inner_sql, $conn);
         while($row = mysql_fetch_array($inner_result)){
             $pic = $row[0];
@@ -193,7 +194,7 @@ echo<<<end5
 </div>
 
 end5;
-$inner_sql2 = "select u.pic_url from applications as p,events as e, users as u where p.event_id = e.id and u.id = p.user_id and e.organizer_id = $organizer_id";
+$inner_sql2 = "select u.pic_url from applications as p,events as e, users as u where p.event_id = e.id and u.id = p.user_id and p.event_id= $event[9] and e.organizer_id = $organizer_id";
         $inner_result2 = mysql_query($inner_sql2,$conn);
         while($row2 = mysql_fetch_array($inner_result2)){
             $pic2 = $row2[0];
@@ -217,10 +218,14 @@ $inner_sql2 = "select u.pic_url from applications as p,events as e, users as u w
 
 
 echo<<<end4
-</div>
+<br>
 end4;
 
 }
+echo<<<end5
+</div>
+
+end5;
 }
 
  
