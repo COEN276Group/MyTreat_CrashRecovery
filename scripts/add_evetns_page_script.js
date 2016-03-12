@@ -3,18 +3,23 @@ function previewFile(){
        var preview = document.querySelector('img');
        var file    = document.querySelector('input[type=file]').files[0]; 
        var reader  = new FileReader();
-
+       var url_input = document.querySelector('#pic_url');
        reader.onloadend = function () {
            preview.src = reader.result;
+           
        }
-
        if (file) {
            reader.readAsDataURL(file); 
+           url_input.value = document.querySelector('input[type=file]').value.substring(12);
+           console.log(url_input.value);
        } else {
            preview.src = "";
+           url_input.value = "";
        }
        
   }
+  previewImg();
+
   $(document).ready(function(){
     $("h2").click(function(){
           $(this).slideDown();
@@ -37,27 +42,8 @@ function previewFile(){
 
 }*/
 
-/*$(document).ready(function(){
-    $('#submit_button').click(function(){
-        var clickBtnValue = $(this).val();
-        var ajaxurl = 'add_evetns_page-ajax.php',
-        data =  {'action': clickBtnValue};
-        $.post(ajaxurl, data, function (response) {
-            // Response div goes here.
-            alert("action performed successfully");
-        });
-    });
 
-});*/
 
-$(document).ready(function(){
-    $('#submit_button').click(function(){
-        
-            alert("action performed successfully");
-        
-    });
-
-});
 
 
 
