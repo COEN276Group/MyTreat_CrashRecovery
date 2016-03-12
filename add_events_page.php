@@ -63,30 +63,30 @@
 				<h2 style = "margin:10px; color:white">Create Your Events</h2>
 			</div>
 <?php
-						$_servername = "localhost";
+					$_servername = "localhost";
 					  $_dbusr = "mt_developer";
 					  $_dbpsw = "mytreat";
 					  //establish connection
 					  //echo "the earlier part is working";
 					  $conn= mysql_connect($_servername,$_dbusr,$_dbpsw);
-					  
+
 					  //echo "the latter part is working";
 					  if(!$conn){
 					    die('Could not connect: ' .mysql_error());
 					  }
 					  //echo 'Connected Successfully<br>';
-					  //choose database 
+					  //choose database
 					  $db = mysql_select_db("mytreat",$conn);
 					  if(!$db){
 					    die("Database not found".mysql_error());
-					  } 
+					  }
 
 				$o_id = (int) $_POST['new_event'];
 
 				//echo isset($o_id);
 				echo $o_id;
-				
-				
+
+
 				//echo "111";
 	$name = $_POST['event_title'];
 	$cat = $_POST['event_category'];
@@ -125,7 +125,7 @@
 					<br>
 					Full description of the event<br/>
 					<textarea name="long_describe" rows="10" cols="50" style="color:#AE89AF;"></textarea><br/>
-				
+
 				<!-- <form action="event_page.php"> -->
 					<input  name="new_event" value="$o_id" style="display:none">
 					<input id="submit_button" name="submit_button" type="submit" value="Create Event" class="button" style="font-size:20px">
@@ -145,11 +145,11 @@ end1;
 	echo $zipcode;
 	echo $pay_type;
 	echo $short_des;
-	echo $long_des;	*/				  
+	echo $long_des;	*/
 	$SQL = "insert into events (organizer_id, event_time, street, city, state, zip, pic_url, title, short_desc, long_desc, category, mytreat, tag) VALUES ($o_id, '$time', '$st_ad', '$city', '$state', '$zipcode', '29102910', '$name', '$short_des', '$long_des', '$cat', '$pay_type', '$tag')";
 	$result = mysql_query($SQL);
 	die(mysql_error());
-						
+
 ?>
 
 			</div>
