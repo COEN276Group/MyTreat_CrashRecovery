@@ -28,7 +28,7 @@
     if(!$db){
         die("Database not found".mysql_error());
     }
-    $sql = "insert into participants values($user_id,$event_id)";
+    $sql = "insert into applications values($user_id,$event_id)";
     $result = mysql_query($sql,$conn) or die(mysql_error());
     echo <<<end
     <head>
