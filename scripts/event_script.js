@@ -37,7 +37,7 @@ $(document).ready(function(){
              
              var app_div = $(this).parent();
              var pro_url = app_div.children().children().attr('src');
-             alert(pro_url);
+             //alert(pro_url);
              var event_id_text = $('#e_id').text();
              var event_id = parseInt(event_id_text);
              //alert(event_id);
