@@ -3,22 +3,47 @@
 $(document).ready(function(){
         $('.delete_app').on('click', function(event) {
              $(this).parent().parent().parent().hide();
+             var app_div = $(this).parent().prev();
+             var pro_url = app_div.children().attr('src');
+             var event_id_text = $('#e_id').text();
+             var event_id = parseInt(event_id_text);
+             var cli = new XMLHttpRequest();
+             cli.open("GET","delete_application.php?pro_url="+pro_url+"&event_id="+event_id);
+             cli.send(null);
         });
 });
 
 $(document).ready(function(){
         $('.accept_app_1').on('click', function(event) {
              var app_div = $(this).parent().prev();
+             var pro_url = app_div.children().attr('src');
+             var event_id_text = $('#e_id').text();
+             var event_id = parseInt(event_id_text);
+             //alert(typeof(event_id));
              app_div.addClass("profile_img_div");
              app_div.append('<input class="delete" type="button" value="X"/>');
              $("#my_event_people_1").append(app_div);
 
              $(this).parent().parent().parent().hide();
+             var cli = new XMLHttpRequest();
+             cli.open("GET","add_application.php?pro_url="+pro_url+"&event_id="+event_id);
+             cli.send(null);
+
         });
 });
 
 $(document).ready(function(){
         $(document).on('click', ".delete", function(event) {
+             
+             var app_div = $(this).parent();
+             var pro_url = app_div.children().children().attr('src');
+             alert(pro_url);
+             var event_id_text = $('#e_id').text();
+             var event_id = parseInt(event_id_text);
+             //alert(event_id);
+             var cli = new XMLHttpRequest();
+             cli.open("GET","delete_participant.php?pro_url="+pro_url+"&event_id="+event_id);
+             cli.send(null);
              $(this).parent().hide();
         });
 });
@@ -116,5 +141,45 @@ function previewFile1(){
   }
 
   previewFile2();  //calls the function named previewFile()
+
+
+  function add_application(){
+            var usr = document.getElementById("usr").value;
+            var psw = document.getElementById("psw").value;
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState==4&&xhr.status==200){
+                    var result = xhr.responseText.split(",");
+                    var code = result[0].trim().toString();
+                    var id = result[1].trim();
+                    var compare = String(code)==="2";
+                    var type = typeof(code);
+                    document.getElementById("result").innerHTML ="code is: ;"+type+";<br />value is: "+result[1]+";<br>Compare: "+compare;
+                    //document.getElementById("result").innerHTML = "compare: "+compare;
+                    if(result[0]==="0"){
+                        document.getElementById("result").innerHTML = "Username does not exist";
+                        return false;
+                    }
+                    else if(result[0]==="1"){
+                        document.getElementById("result").innerHTML = "Wrong Password";
+                        return false;
+                    }
+                    else if(result[0]==="2"){
+                        return true;
+                    }
+                    else{
+                        //document.getElementById("result").innerHTML ="else";
+                    }
+
+                    //document.getElementById("result").innerHTML = "result: "+result[0]+";";
+
+                }
+
+            }
+            xhr.open("GET","add_application.php?password="+psw+"&username="+usr);
+            xhr.send(null);
+            return false;
+
+        }
 
   

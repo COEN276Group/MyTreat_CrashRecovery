@@ -87,6 +87,9 @@
     die("Database not found".mysql_error());
   }
   $sql =  "select title,street, city, state, zip, event_time, long_desc, mytreat, pic_url, id from events where organizer_id=$organizer_id";
+  $event_id_sql = mysql_query($sql,$conn);
+  $ev= mysql_fetch_array($event_id_sql);
+  $event_id = $_GET[$ev[9]];
   $result = mysql_query($sql,$conn);
   $result2 = mysql_query($sql,$conn);
   if($result === FALSE) {
@@ -99,6 +102,7 @@
   //while($event1 = mysql_fetch_array($result)){
 
     echo<<<end1
+    <div id = "e_id" style="display:none;">$ev[9]</div>
 <div class="container">
   <br>
   <div class="row subtitle">
