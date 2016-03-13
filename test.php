@@ -23,55 +23,32 @@
         //     }
         // });
 
-
-        function login(){
-            var usr_input = document.getElementById("usr");
-            var psw_input = document.getElementById("psw");
-            if(usr_input.value.eq("")){
-                //e.preventDefault();//possibly wrong
-                alert("please enter a username");
-                usr_input.focus();
-                return false;
-            }
-            else if(psw_input.value.eq("")){
-                //e.preventDefault();//possibly wrong
-                alert("please enter a username");
-                psw_input.focus();
-                return false;
-            }else{
-                validateInfo(usr_input.value,psw_input.value);
-                return true;
-            }
-        }
         function validateInfo(){
             var usr = document.getElementById("usr").value;
             var psw = document.getElementById("psw").value;
             var xhr = new XMLHttpRequest();
             xhr.onreadystatechange = function(){
                 if(xhr.readyState==4&&xhr.status==200){
+                    document.getElementById("result").innerHTML = result;
                     var result = xhr.responseText.split(",");
-                    var code = result[0].trim().toString();
-                    var id = result[1].trim();
-                    var compare = String(code)==="2";
-                    var type = typeof(code);
-                    document.getElementById("result").innerHTML ="code is: ;"+type+";<br />value is: "+result[1]+";<br>Compare: "+compare;
-                    //document.getElementById("result").innerHTML = "compare: "+compare;
+                    var code = result[0];
+                    var id = result[1];
+
                     if(result[0]==="0"){
                         document.getElementById("result").innerHTML = "Username does not exist";
-                        return false;
                     }
                     else if(result[0]==="1"){
                         document.getElementById("result").innerHTML = "Wrong Password";
-                        return false;
                     }
                     else if(result[0]==="2"){
-                        return true;
+                        document.getElementById("id").value= id;
+                        document.getElementById("result").innerHTML = "Correct!";
+                        document.form1.submit()
                     }
                     else{
                         //document.getElementById("result").innerHTML ="else";
                     }
 
-                    //document.getElementById("result").innerHTML = "result: "+result[0]+";";
 
                 }
 
@@ -87,10 +64,10 @@
 
     </head>
     <body>
-        <form class="" action="myprofile_page.php" method="post" onsubmit="return(validateInfo())">
+        <form name="form1" action="myprofile_page.php" method="post" onsubmit="return(validateInfo())">
             <input id="usr" type="text" name="username"  placeholder="Username"/>
             <input id="psw" type="text" name="password" placeholder="Password"/>
-            <input name = "user_id" style="display:none"/>
+            <input id="id" name = "user_id" style="display:block"/>
             <button id="login" type="submit">Login</button>
         </form>
 

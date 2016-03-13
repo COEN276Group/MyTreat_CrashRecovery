@@ -1,7 +1,3 @@
-<!DOCTYPE html>
-<html>
-
-
 <?php
 
     //header("Content-Type: text/plain");
@@ -26,16 +22,15 @@
     $sql = "select email,psw,id from users where email = '$username'";
     $result = mysql_query($sql,$conn);
     if(mysql_num_rows($result)==0){
-        print "0";
+        print "0,";
     }else{
         $row = mysql_fetch_array($result);
         $correct_psw = $row[1];
         $user_id = $row[2];
         if(strcmp($password,$correct_psw)!==0){
-            print "1";
+            echo "1,";
         }else{
-            print "2,$user_id";
+            echo "2,$user_id";
         }
     }
 ?>
-</html>

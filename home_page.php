@@ -9,6 +9,7 @@
     <link rel="shortcut icon" href="images/general/favicon.ico" />
     <script src="scripts/jQuery.js"></script>
     <script src="scripts/flip.js"></script>
+	<script src="scripts/general.js"></script>
 	<script src="scripts/modal.js"></script>
 	<script src="scripts/home.js"></script>
 	<script type="text/javascript">
@@ -262,13 +263,15 @@ end;
 		<section class="popupBody">
 			<!-- Username & Password Login form -->
 			<div class="user_login">
-				<form action="login.php$url_append" method="post">
+				<form name="form1" action="myprofile_page.php" method="post" onsubmit="return(validateInfo())">
 					<label>Email / Username</label>
-					<input type="text" name = "username" required/>
+					<input id="usr" type="text" name = "username" required/>
 					<br>
 					<label>Password</label>
-					<input type="password" name = "password" required/>
+					<input id="psw" type="password" name = "password" required/>
+					<input id="user_id" name = "user_id" style="display:none" />
 					<br>
+					<span id="warning" style="color:#ff5c33"></span>
 					<input type="submit" value="Login"  class="btn btn_theme" style="width:98%;font-size:18px;border:1px solid white"/>
 				</form>
 					<br>
