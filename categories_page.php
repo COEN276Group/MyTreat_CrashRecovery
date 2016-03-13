@@ -177,6 +177,9 @@ end1;
                     <div class = "col5"></div>
 
                     <div class = "col2">
+					<form action="application_handler.php$url_append" method="post">
+						<input name="user_id" value="$cur_user" style="display:none"/>
+						<input name="event_id" value="$e_id" style="display:none"/>
 end2;
 if($logged_in){
 	echo '<input class = "want_in_button" type = "submit" value = "I Want In!">';
@@ -184,6 +187,7 @@ if($logged_in){
 	echo '<input type = "button" value = "I Want In!" onclick="alert(\'Please Sign in First!\')">';
 }
 			echo <<<end2
+			</form>
                     </div>
                     <div class = "col1"></div>
                 </div>
