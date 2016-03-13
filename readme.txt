@@ -54,3 +54,7 @@ How to Use:
 	data.
 
 	Once this is done, open up the home_page.php file in the browser through the url: localhost/MyTreat/home_page.php
+
+	Since we do not have the technology to capture the actual images that users upload for profile and event creation, we can only
+	support choosing event pictures or profile pictures that are already in the image folders: images/contents/ for events and
+	images/profile_pics for profiles. Otherwise the pictures will not be properly loaded.

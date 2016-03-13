@@ -60,7 +60,6 @@
     if(!$conn){
         die('Could not connect: ' .mysql_error());
     }
-    echo '<script>alert(\'Connected Successfully\')</script>';
     //choose database
     $db = mysql_select_db("mytreat",$conn);
     if(!$db){
