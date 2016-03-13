@@ -10,6 +10,7 @@
         <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="stylesheets/general_style.css">
         <link rel="stylesheet" href="stylesheets/event_style.css">
+        <link rel="stylesheet" type="text/css" href="stylesheets/signup_style.css">
         <link rel="shortcut icon" href="images/general/favicon.ico" />
         <script src="scripts/jQuery.js"></script>
         <script src="scripts/modal.js"></script>
@@ -109,10 +110,10 @@
     <div class="col12">
       <h1 id="event_text">My Events</h1>
   </div>`
-  </div><br>
-  Create New Event
+  </div>
   <form method="post" action="add_events_page.php">
-    <input type="submit" name= "new_event" value="$organizer_id">
+
+    <button id="submit_button" name="new_event" type="submit" value="$organizer_id" class="button" style="font-size:20px">Create Event</button>
   </form>
 end1;
 if (!$try = mysql_fetch_array($result2)){

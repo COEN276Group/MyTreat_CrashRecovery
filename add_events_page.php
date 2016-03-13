@@ -220,6 +220,6 @@ end1;
 	echo $long_des;	*/
 	$SQL = "insert into events (organizer_id, event_time, street, city, state, zip, pic_url, title, short_desc, long_desc, category, mytreat, tag) VALUES ($o_id, '$time', '$st_ad', '$city', '$state', '$zipcode', '$pic_url', '$name', '$short_des', '$long_des', '$cat', '$pay_type', '$tag')";
 	$result = mysql_query($SQL);
-	//die(mysql_error());
+	die(mysql_error());
 
 ?>

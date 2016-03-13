@@ -11,7 +11,6 @@ function previewFile(){
         reader.readAsDataURL(file);
         url_input.value = document.querySelector('input[type=file]').value.substring(12);
         //alert("value: "+url_input.value);
-        console.log(url_input.value);
     } else {
         preview.src = "";
         url_input.value = "";
