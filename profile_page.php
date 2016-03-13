@@ -196,28 +196,31 @@ end2;
     <!--modal stuff-->
 
     <div id="modal" class="popupContainer" style="display:none;">
-        <header class="popupHeader">
-            <span class="header_title">Login</span>
-            <span class="modal_close"><i class="fa fa-times"></i></span>
-        </header>
+			<header class="popupHeader">
+				<span class="header_title">Login</span>
+				<span class="modal_close"><i class="fa fa-times"></i></span>
+			</header>
 
-        <section class="popupBody">
-            <!-- Username & Password Login form -->
-            <div class="user_login">
-                <form action="login.php" method="post" style="float:none;">
-                    <label>Email / Username</label>
-                    <input type="text" name = "username" required/>
-                    <br>
-                    <label>Password</label>
-                    <input type="password" name = "password" required/>
-                    <br>
-                    <input type="submit" value="Login"  class="btn btn_theme action_btns" style="width:98%;font-size:18px;border:1px solid white"/>
-                </form>
-                <br>
-                <a href="signup_page.html" class = "new_user">New User? Click Here to Register</a>
-            </div>
-        </section>
-    </div>
+
+		<section class="popupBody">
+			<!-- Username & Password Login form -->
+			<div class="user_login">
+				<form name="form1" action="myprofile_page.php" method="post" onsubmit="return(validateInfo())">
+					<label>Email / Username</label>
+					<input id="usr" type="text" name = "username" required/>
+					<br>
+					<label>Password</label>
+					<input id="psw" type="password" name = "password" required/>
+					<input id="user_id" name = "user_id" style="display:none" />
+					<br>
+					<span id="warning" style="color:#ff5c33"></span>
+					<input type="submit" value="Login"  class="btn btn_theme" style="width:98%;font-size:18px;border:1px solid white"/>
+				</form>
+					<br>
+					<a href="signup_page.html" class = "new_user">New User? Click Here to Register</a>
+				</div>
+			</section>
+	</div>
 
 
 
