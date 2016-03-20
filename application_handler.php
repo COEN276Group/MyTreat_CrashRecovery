@@ -126,24 +126,23 @@
                 </header>
 
                 <section class="popupBody">
-                    <!-- Username & Password Login form -->
-                    <div class="user_login">
-                        <form>
-                            <label>Email / Username</label>
-                            <input type="text" />
-                            <br>
-
-                            <label>Password</label>
-                            <input type="password" />
-                            <br>
-                            <div class="action_btns">
-                                <div class=""><a href="myprofile_page.php$url_append" class="btn btn_theme">Login</a></div>
-                            </div>
-                        </form>
-                        <br>
-                        <a href="signup_page.html" class = "new_user">New User? Click Here to Register</a>
-                    </div>
-                </section>
+        			<!-- Username & Password Login form -->
+        			<div class="user_login">
+        				<form name="form1" action="myprofile_page.php" method="post" onsubmit="return(validateInfo())">
+        					<label>Email / Username</label>
+        					<input id="usr" type="text" name = "username" required/>
+        					<br>
+        					<label>Password</label>
+        					<input id="psw" type="password" name = "password" required/>
+        					<input id="user_id" name = "user_id" style="display:none" />
+        					<br>
+        					<span id="warning" style="color:#ff5c33"></span>
+        					<input type="submit" value="Login"  class="btn btn_theme" style="width:98%;font-size:18px;border:1px solid white"/>
+        				</form>
+        					<br>
+        					<a href="signup_page.html" class = "new_user">New User? Click Here to Register</a>
+        				</div>
+        			</section>
         </div>
 
 end;

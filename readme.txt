@@ -15,16 +15,6 @@ Project Overview:
 	The website is a social network website designed for users to organize social meet-up events with strangers or friends. Users can host or join events in various categories. Users will be able to browse lists of incoming events, create events according to his/her own taste and view other people's profiles pages. Once users find out about an event that they want to join, they can send an application with comments to the organizer. The organizer will be able to selectively accept these event application after reviewing the applicants' profiles.
 
 Package Contents:
-	The zip file package contains 8 html files, and three folders. They are:
-
-		home_page.html
-		categories_page.html
-		event_page.html
-		my_events_management_page.html
-		my_profile_page.html
-		profile_page.html
-		search_result_page.html
-		signup_page.html
 
 		images/
 		scripts/
@@ -49,6 +39,7 @@ References:
 
 How to Use:
 	Before opening up the home page, make sure to set up the back end MySQL database.
+
 	In MySQL, run database/createtb.sql first and then run database/inserttb.sql. The first file will create a user,
 	grant permission and create tables for the website. The second file will populate the database with some initial
 	data.

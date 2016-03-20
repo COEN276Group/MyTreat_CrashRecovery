@@ -44,9 +44,10 @@
           </div>
           <div class="row">
             <div id="tfheader">
-              <form id="tfnewsearch" method="get" action="search_result_page.html">
-                <input id="search1" type="text" class="tftextinput" name="q" size="21" maxlength="120"><input type="submit" value="search" class="tfbutton">
-              </form>
+				<form id="tfnewsearch" method="post" action="search_page.php">
+				  <input type="text" id="search1" class="tftextinput" placeholder="Search Events" name="keyword" size="21" maxlength="120">
+				  <input type="submit" value="search" class="tfbutton">
+				</form>
               <div class="tfclear"></div>
             </div>
           </div>
